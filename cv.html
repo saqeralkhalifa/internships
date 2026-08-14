@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Build a CV | Internship Opportunities</title>
 <meta name="description" content="A free CV builder for Gulf students with no experience yet. Fill the boxes, get a clean one page CV you can save as PDF and attach to an internship application. Arabic and English.">
+<script>
+/* The site now lives at the root of its own subdomain, so GoatCounter would
+   record every visit as "/" and collide with the other tools. Force the old
+   path prefix so the history before the move stays continuous. */
+window.goatcounter = {path: function(p){ return "/internships" + (p === "/" ? "" : p); }};
+</script>
 <script data-goatcounter="https://majorcompass.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
