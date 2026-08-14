@@ -55,7 +55,7 @@ function mcSaveLang(v){ try{ localStorage.setItem("mc-lang", v); }catch(e){} }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
 <style>
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -153,36 +153,36 @@ function mcSaveLang(v){ try{ localStorage.setItem("mc-lang", v); }catch(e){} }
    No shadows, no gradients, no icons.
    ============================================================ */
 :root{
-  --font-display:Newsreader, Georgia, 'Times New Roman', serif;
-  --font-body:'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-  --font-ar:'IBM Plex Sans Arabic', 'IBM Plex Sans', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --font-display:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-ar:'Noto Naskh Arabic', 'Amiri', Georgia, serif;
 
-  --paper:#f6f3ec;
-  --paper-2:#efece4;
-  --card:#fbf9f4;
-  --line:#ddd7cb;
-  --line-2:#cfc9bd;
+  --paper:#FAF5EA;
+  --paper-2:#EFE4CE;
+  --card:#F5ECDA;
+  --line:#E2D5BB;
+  --line-2:#D3C0A0;
 
-  --ink:#14161a;
-  --ink-2:#33363c;
-  --ink-3:#6b6e74;
+  --ink:#152A55;
+  --ink-2:#4A3728;
+  --ink-3:#6B5B47;
 
-  --navy:#14161a;
-  --navy-deep:#8a5a1e;
-  --accent:#8a5a1e;
-  --accent-soft:#efece4;
-  --accent-line:#cfc9bd;
+  --navy:#152A55;
+  --navy-deep:#0F2047;
+  --accent:#8A6A2E;
+  --accent-soft:#EFE4CE;
+  --accent-line:#D3C0A0;
 
-  --gold:#8a5a1e;
-  --gold-soft:#f0ebdf;
-  --gold-line:#ddd7cb;
-  --gold-bright:#d8b98a;
+  --gold:#8A6A2E;
+  --gold-soft:#F5ECDA;
+  --gold-line:#E2D5BB;
+  --gold-bright:#C09A45;
 
-  --good:#3f6b4f;  --good-soft:#eaefe9;  --good-line:#cfdbd0;
-  --warn:#8a5a1e;  --warn-soft:#f0ebdf;  --warn-line:#e2d9c6;
-  --bad:#8c3a30;   --bad-soft:#f4e9e5;   --bad-line:#e2cfc8;
+  --good:#2F5D46;  --good-soft:#E7EEE8;  --good-line:#C9D8CC;
+  --warn:#8A6A2E;  --warn-soft:#F5ECDA;  --warn-line:#E2D5BB;
+  --bad:#8C3A30;   --bad-soft:#F6EAE3;   --bad-line:#E4D2C7;
 
-  --radius:0; --radius-sm:0;
+  --radius:2px; --radius-sm:2px;
   --shadow:none; --shadow-lift:none;
 }
 
@@ -231,7 +231,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .mc-brand{display:flex; align-items:baseline; gap:10px; text-decoration:none; color:var(--paper); min-width:0;}
 .mc-brand b{font-family:var(--font-display); font-size:17px; font-weight:400; letter-spacing:-.01em; white-space:nowrap;}
 [dir="rtl"] .mc-brand b{font-family:var(--font-ar); font-weight:600; letter-spacing:0;}
-.mc-brand span{font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#9a9da3; white-space:nowrap;}
+.mc-brand span{font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#9AAAD0; white-space:nowrap;}
 [dir="rtl"] .mc-brand span{letter-spacing:0; text-transform:none; font-size:12px;}
 .mc-nav-links{
   display:flex; gap:20px; font-size:12px; letter-spacing:.06em; align-items:center;
@@ -240,7 +240,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .mc-nav-links::-webkit-scrollbar{display:none;}
 [dir="rtl"] .mc-nav-links{letter-spacing:0; font-size:13px;}
 .mc-nav-links a{
-  color:#c9ccd2; text-decoration:none; white-space:nowrap; padding-bottom:2px;
+  color:#D3DCEF; text-decoration:none; white-space:nowrap; padding-bottom:2px;
   border-bottom:1px solid transparent; transition:color .15s, border-color .15s;
 }
 .mc-nav-links a:hover{color:var(--paper);}
@@ -248,7 +248,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .mc-nav .lang-toggle{
   flex:0 0 auto; border:1px solid var(--accent); background:var(--accent); border-radius:999px;
   padding:6px 17px; font-size:13px; letter-spacing:.04em; font-weight:600;
-  color:#fbf9f4; cursor:pointer; font-family:var(--font-body);
+  color:#F5ECDA; cursor:pointer; font-family:var(--font-body);
   transition:background .15s, color .15s, border-color .15s;
 }
 .mc-nav .lang-toggle:hover{background:var(--paper); color:var(--ink); border-color:var(--paper);}
@@ -405,16 +405,16 @@ html{scroll-padding-top:76px;}
 }
 .mc-nav-right{display:flex; align-items:center; gap:14px; flex:0 0 auto;}
 .mc-site{
-  color:#9a9da3; text-decoration:none; font-size:12px; letter-spacing:.06em; white-space:nowrap;
+  color:#9AAAD0; text-decoration:none; font-size:12px; letter-spacing:.06em; white-space:nowrap;
   border-bottom:1px solid transparent; padding-bottom:2px; transition:color .15s, border-color .15s;
 }
-.mc-site:hover{color:var(--paper); border-bottom-color:#3a3d43;}
+.mc-site:hover{color:var(--paper); border-bottom-color:#2E4477;}
 [dir="rtl"] .mc-site{letter-spacing:0; font-size:13px;}
 .mc-book{
-  color:#d8b98a; text-decoration:none; font-size:12px; letter-spacing:.06em; white-space:nowrap;
-  border:1px solid rgba(216,185,138,.45); padding:6px 13px; transition:background .15s, color .15s, border-color .15s;
+  color:#C09A45; text-decoration:none; font-size:12px; letter-spacing:.06em; white-space:nowrap;
+  border:1px solid rgba(192,154,69,.45); padding:6px 13px; transition:background .15s, color .15s, border-color .15s;
 }
-.mc-book:hover{background:#d8b98a; color:var(--ink); border-color:#d8b98a;}
+.mc-book:hover{background:#C09A45; color:var(--ink); border-color:#C09A45;}
 [dir="rtl"] .mc-book{letter-spacing:0; font-size:13px;}
 @media (max-width:860px){ .mc-site{display:none;} }
 @media (max-width:640px){
@@ -522,32 +522,32 @@ html{scroll-padding-top:76px;}
    A scholarly newspaper. Hairline rules, tabular listings,
    one oxblood accent doing all the work. Square corners. */
 :root{
-  --font-display:'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body:'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-display:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:'EB Garamond', Georgia, 'Times New Roman', serif;
 
-  --paper:#faf8f4; --paper-2:#f2eee7; --card:#ffffff;
-  --line:#e2ddd3; --line-2:#c9c2b5;
-  --ink:#1a1712; --ink-2:#3c372f; --ink-3:#6f6a60;
-  --navy:#1a1712; --navy-deep:#8c2f28;
-  --accent:#8c2f28; --accent-soft:#f5ece9; --accent-line:#d9bdb9;
-  --gold:#8c2f28; --gold-soft:#f5ece9; --gold-line:#e2ddd3; --gold-bright:#d8a49c;
-  --radius:0; --radius-sm:0; --shadow:none; --shadow-lift:none;
+  --paper:#FAF5EA; --paper-2:#EFE4CE; --card:#F5ECDA;
+  --line:#E2D5BB; --line-2:#D3C0A0;
+  --ink:#152A55; --ink-2:#4A3728; --ink-3:#6B5B47;
+  --navy:#152A55; --navy-deep:#0F2047;
+  --accent:#8A6A2E; --accent-soft:#EFE4CE; --accent-line:#D3C0A0;
+  --gold:#8A6A2E; --gold-soft:#F5ECDA; --gold-line:#E2D5BB; --gold-bright:#C09A45;
+  --radius:2px; --radius-sm:2px; --shadow:none; --shadow-lift:none;
 
-  --mc-paper:#faf8f4; --mc-band:#f2eee7; --mc-card:#ffffff;
-  --mc-ink:#1a1712; --mc-ink-2:#3c372f; --mc-ink-3:#6f6a60; --mc-muted:#6f6a60;
-  --mc-rule:#e2ddd3; --mc-border:#c9c2b5;
-  --mc-accent:#8c2f28; --mc-accent-dim:#d8a49c;
-  --mc-on-dark:#faf8f4; --mc-on-dark-2:#a9a49a; --mc-dark-rule:#332e27;
-  --mc-serif:'Playfair Display', Georgia, serif;
+  --mc-paper:#FAF5EA; --mc-band:#EFE4CE; --mc-card:#F5ECDA;
+  --mc-ink:#152A55; --mc-ink-2:#4A3728; --mc-ink-3:#6B5B47; --mc-muted:#8A7761;
+  --mc-rule:#E2D5BB; --mc-border:#D3C0A0;
+  --mc-accent:#8A6A2E; --mc-accent-dim:#C09A45;
+  --mc-on-dark:#F3EADA; --mc-on-dark-2:#9AAAD0; --mc-dark-rule:#2E4477;
+  --mc-serif:'EB Garamond', Georgia, 'Times New Roman', serif;
 
-  --deep:#1c3630;          /* the one dark panel colour */
-  --muted:#6f6a60; --sec:#3c372f; --body:#3c372f;
+  --deep:#152A55;          /* the one dark panel colour */
+  --muted:#8A7761; --sec:#4A3728; --body:#4A3728;
 }
 body{background:var(--paper); color:var(--ink-2); font-size:19px; line-height:1.75;}
 .wrap{max-width:1000px;}
 
 /* ---- masthead ---- */
-.mc-nav{background:#1a1712;}
+.mc-nav{background:#152A55;}
 .mc-brand b{font-family:var(--font-display); font-weight:600; font-size:19px; letter-spacing:.01em;}
 .mc-nav-inner{gap:20px;}
 .mc-nav-links{font-size:13px; letter-spacing:.02em; gap:14px; flex:0 1 auto;}
@@ -556,8 +556,8 @@ body{background:var(--paper); color:var(--ink-2); font-size:19px; line-height:1.
 .mc-book{font-size:12px; padding:6px 12px;}
 .mc-brand span{font-size:10.5px; letter-spacing:.1em;}
 @media (max-width:1080px){ .mc-site{display:none;} }
-.mc-nav-links a{color:#cfc9bd;}
-.mc-nav .lang-toggle{background:transparent; border:1px solid #4a443b; color:#e8e3d9;
+.mc-nav-links a{color:#D3DCEF;}
+.mc-nav .lang-toggle{background:transparent; border:1px solid #2E4477; color:#F3EADA;
   border-radius:0; font-weight:600; letter-spacing:.06em; padding:5px 13px;}
 .mc-nav .lang-toggle:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
 .mc-book{border-radius:0 !important;}
@@ -581,16 +581,16 @@ body{background:var(--paper); color:var(--ink-2); font-size:19px; line-height:1.
 
 /* ---- quiz matcher: the one dark slab ---- */
 .matcher{background:var(--deep); padding:38px 34px; margin-top:34px;}
-.matcher h2{font-family:var(--font-display); font-weight:600; font-size:31px; color:#f4f1ea; line-height:1.3;}
+.matcher h2{font-family:var(--font-display); font-weight:600; font-size:31px; color:#F3EADA; line-height:1.3;}
 [dir="rtl"] .matcher h2{font-family:var(--font-ar); font-size:28px;}
-.matcher p{color:#b4c2bc; font-size:18px; margin-top:11px;}
-.matcher a{color:#e8b3ac;}
-#matcher .chip, .matcher .chip{background:transparent; color:#e9e5dc !important;
-  border-color:#4a6a61 !important; border-radius:0;}
-#matcher .chip:hover, .matcher .chip:hover{border-color:#e8b3ac !important; color:#ffffff !important;}
-#matcher .chip.on, .matcher .chip.on{background:#f4f1ea !important; color:#1c3630 !important;
-  border-color:#f4f1ea !important;}
-.matcher .hint{color:#8fa39c; font-size:15px;}
+.matcher p{color:#CBD5EA; font-size:18px; margin-top:11px;}
+.matcher a{color:#C09A45;}
+#matcher .chip, .matcher .chip{background:transparent; color:#F3EADA !important;
+  border-color:#2E4477 !important; border-radius:0;}
+#matcher .chip:hover, .matcher .chip:hover{border-color:#C09A45 !important; color:#ffffff !important;}
+#matcher .chip.on, .matcher .chip.on{background:#F3EADA !important; color:#152A55 !important;
+  border-color:#F3EADA !important;}
+.matcher .hint{color:#9AAAD0; font-size:15px;}
 
 /* ---- filters ---- */
 .ctrow h3, .fgroup h3{font-size:12px; letter-spacing:.2em; color:var(--ink-3); font-weight:600;}
@@ -646,11 +646,11 @@ body{background:var(--paper); color:var(--ink-2); font-size:19px; line-height:1.
 
 /* ---- employer call to action ---- */
 .subbox{background:var(--ink); padding:42px 36px;}
-.subbox h2{font-family:var(--font-display); font-weight:600; font-size:31px; color:#f7f4ee;}
+.subbox h2{font-family:var(--font-display); font-weight:600; font-size:31px; color:#F3EADA;}
 [dir="rtl"] .subbox h2{font-family:var(--font-ar); font-size:28px;}
-.subbox p{color:#b8b2a6; font-size:18px;}
+.subbox p{color:#9AAAD0; font-size:18px;}
 .subbox .btn{border-radius:0; background:var(--accent); color:#fff; border-color:var(--accent); font-size:17px;}
-.subbox .btn:hover{background:#a8382f; border-color:#a8382f; color:#fff;}
+.subbox .btn:hover{background:#1E3A78; border-color:#1E3A78; color:#fff;}
 
 /* ---- across to Major Compass ---- */
 .mcbox{border-top:2px solid var(--ink); padding-top:34px;}
@@ -692,7 +692,7 @@ footer.site{border-top:1px solid var(--line); margin-top:44px;}
 .btn.apply{background:var(--accent); color:#fff; border:1px solid var(--accent);
   padding:12px 22px; font-size:16px; font-weight:600; text-decoration:none; border-radius:0;
   min-height:46px; display:inline-flex; align-items:center;}
-.btn.apply:hover{background:#a8382f; border-color:#a8382f; color:#fff;}
+.btn.apply:hover{background:#1E3A78; border-color:#1E3A78; color:#fff;}
 .btn.apply.mail{background:transparent; color:var(--accent);}
 .btn.apply.mail:hover{background:var(--accent); color:#fff;}
 .applyrow .olink{margin-top:0;}
@@ -722,6 +722,43 @@ html, body{overflow-x:hidden;}
   .opp{padding:20px 16px;}
   .evnote{padding:14px 16px;}
 }
+
+<style>
+
+/* ---- Theme 2a label face -------------------------------------------
+   Mono caps for the things that were already labels. Latin lands on
+   IBM Plex Mono, Arabic falls through to Naskh, so one token covers both. */
+:root{ --font-label:'IBM Plex Mono', 'Noto Naskh Arabic', ui-monospace, SFMono-Regular, monospace; }
+.kicker,.tag,.evtag,.orows dt,.sread dt,.ctrow h3,.fgroup h3,.needbox b,.ometa,
+.count,.btn,.btn.apply,.mc-nav-links,.mc-brand span{ font-family:var(--font-label); }
+.btn,.btn.apply{ text-transform:uppercase; letter-spacing:.1em; font-size:14px; }
+.btn.apply{ font-weight:500; }
+
+/* Headlines in the serif, in the band blue, both scripts. */
+.hero h1,.keybox h2,.srcbox h2,.mcbox h2,.oorg,.evclaim,.sread h3{ font-family:var(--font-display); }
+[dir="rtl"] .hero h1,[dir="rtl"] .keybox h2,[dir="rtl"] .srcbox h2,[dir="rtl"] .mcbox h2,
+[dir="rtl"] .oorg,[dir="rtl"] .evclaim,[dir="rtl"] .sread h3{ font-family:var(--font-ar); }
+
+/* Never track Arabic, never uppercase it. */
+[dir="rtl"] *{ letter-spacing:0 !important; }
+[dir="rtl"] .kicker,[dir="rtl"] .tag,[dir="rtl"] .evtag,[dir="rtl"] .orows dt,
+[dir="rtl"] .sread dt,[dir="rtl"] .needbox b,[dir="rtl"] .btn,
+[dir="rtl"] .ctrow h3,[dir="rtl"] .fgroup h3{ text-transform:none; }
+
+/* Gold at full strength only on blue. */
+.matcher .chip.on,#matcher .chip.on{ background:#C09A45 !important; color:#152A55 !important;
+  border-color:#C09A45 !important; }
+.tag.open{ background:#8A6A2E; border-color:#8A6A2E; color:#FAF5EA; }
+.evtag.causal{ background:#8A6A2E; border-color:#8A6A2E; color:#FAF5EA; }
+.subbox .btn{ background:#C09A45; color:#152A55; border-color:#C09A45; }
+.subbox .btn:hover{ background:#D9B863; border-color:#D9B863; color:#152A55; }
+/* Links sitting on the blue slabs need to be gold, not ink. */
+.matcher a,.subbox a,.matcher p a{ color:#C09A45; border-bottom-color:rgba(192,154,69,.5); }
+.matcher a:hover,.subbox a:hover{ color:#D9B863; }
+.matcher .hint a{ color:#C09A45; }
+*{ text-shadow:none; }
+:focus-visible{ outline:2px solid #C09A45; outline-offset:2px; }
+</style>
 </style>
 
 </head>

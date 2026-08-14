@@ -17,7 +17,7 @@ window.goatcounter = {path: function(p){
 <script data-goatcounter="https://majorcompass.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>
 function mcInitLang(){
   try{
@@ -35,11 +35,11 @@ function mcSaveLang(v){ try{ localStorage.setItem("mc-lang", v); }catch(e){} }
 <style>
 *{margin:0;padding:0;box-sizing:border-box;border-radius:0;}
 :root{
-  --paper:#faf8f4; --paper-2:#f2eee7; --card:#ffffff;
-  --line:#e2ddd3; --line-2:#c9c2b5;
-  --ink:#1a1712; --ink-2:#3c372f; --ink-3:#6f6a60;
-  --accent:#8c2f28; --deep:#1c3630;
-  --serif:'Playfair Display', Georgia, serif;
+  --paper:#FAF5EA; --paper-2:#EFE4CE; --card:#F5ECDA;
+  --line:#E2D5BB; --line-2:#D3C0A0;
+  --ink:#152A55; --ink-2:#4A3728; --ink-3:#6B5B47;
+  --accent:#8A6A2E; --deep:#152A55;
+  --serif:'EB Garamond', Georgia, serif;
   --sans:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
   --ar:'IBM Plex Sans Arabic','IBM Plex Sans', sans-serif;
 }
@@ -49,15 +49,15 @@ body{background:var(--paper); color:var(--ink-2); font-family:var(--sans);
 .wrap{max-width:900px; margin:0 auto; padding:0 22px 90px;}
 
 /* nav */
-.nav{background:#1a1712; padding:12px 0;}
+.nav{background:#152A55; padding:12px 0;}
 .nav-in{max-width:1160px; margin:0 auto; padding:0 22px; display:flex; align-items:center;
   justify-content:space-between; gap:16px; flex-wrap:wrap;}
-.nav a.brand{font-family:var(--serif); font-weight:600; font-size:19px; color:#f7f4ee; text-decoration:none;}
+.nav a.brand{font-family:var(--serif); font-weight:600; font-size:19px; color:#F3EADA; text-decoration:none;}
 [dir="rtl"] .nav a.brand{font-family:var(--ar);}
 .nav .right{display:flex; gap:10px; align-items:center;}
-.nav .right a{color:#cfc9bd; font-size:13px; text-decoration:none;}
+.nav .right a{color:#D3DCEF; font-size:13px; text-decoration:none;}
 .nav .right a:hover{color:#fff;}
-.lang{background:transparent; border:1px solid #4a443b; color:#e8e3d9; padding:5px 13px;
+.lang{background:transparent; border:1px solid #2E4477; color:#F3EADA; padding:5px 13px;
   font-size:12px; font-weight:600; letter-spacing:.06em; cursor:pointer; font-family:inherit;}
 .lang:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
 
@@ -105,7 +105,7 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
 .btn{background:var(--accent); color:#fff; border:1px solid var(--accent); padding:15px 28px;
   font-family:inherit; font-size:17px; font-weight:600; cursor:pointer; text-decoration:none;
   min-height:52px; display:inline-flex; align-items:center; justify-content:center;}
-.btn:hover{background:#a8382f; border-color:#a8382f;}
+.btn:hover{background:#1E3A78; border-color:#1E3A78;}
 .btn.ghost{background:transparent; color:var(--accent);}
 .btn.ghost:hover{background:var(--accent); color:#fff;}
 .saved{font-size:15px; color:var(--ink-3); margin-top:12px;}
@@ -113,21 +113,21 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
 /* the rendered CV */
 #out{display:none; margin-top:40px;}
 #out.on{display:block;}
-.cv{background:#fff; border:1px solid var(--line); padding:52px 56px; color:#16130f;}
-.cv h3{font-family:var(--serif); font-weight:700; font-size:36px; line-height:1.15; color:#16130f;}
+.cv{background:#fff; border:1px solid var(--line); padding:52px 56px; color:#152A55;}
+.cv h3{font-family:var(--serif); font-weight:700; font-size:36px; line-height:1.15; color:#152A55;}
 [dir="rtl"] .cv h3{font-family:var(--ar); font-size:32px;}
-.cv .contact{font-size:16px; color:#4a453c; margin-top:10px; line-height:1.7;}
-.cv .rule{height:2px; background:#16130f; margin:22px 0 0;}
-.cv h4{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#8c2f28;
+.cv .contact{font-size:16px; color:#4A3728; margin-top:10px; line-height:1.7;}
+.cv .rule{height:2px; background:#152A55; margin:22px 0 0;}
+.cv h4{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#8A6A2E;
   font-weight:700; margin-top:26px; padding-bottom:7px; border-bottom:1px solid #ddd8ce;}
 [dir="rtl"] .cv h4{letter-spacing:.03em; font-size:15px;}
 .cv .item{margin-top:14px;}
 .cv .item .l1{display:flex; justify-content:space-between; gap:16px; align-items:baseline;}
-.cv .item .t{font-weight:600; font-size:18px; color:#16130f;}
-.cv .item .d{font-size:15px; color:#6f6a60; white-space:nowrap;}
-.cv .item .s{font-size:16px; color:#4a453c;}
-.cv .item p{font-size:16px; line-height:1.7; color:#3c372f; margin-top:5px; white-space:pre-line;}
-.cv .plain{font-size:16px; line-height:1.8; color:#3c372f; margin-top:12px; white-space:pre-line;}
+.cv .item .t{font-weight:600; font-size:18px; color:#152A55;}
+.cv .item .d{font-size:15px; color:#6B5B47; white-space:nowrap;}
+.cv .item .s{font-size:16px; color:#4A3728;}
+.cv .item p{font-size:16px; line-height:1.7; color:#4A3728; margin-top:5px; white-space:pre-line;}
+.cv .plain{font-size:16px; line-height:1.8; color:#4A3728; margin-top:12px; white-space:pre-line;}
 
 @media (max-width:760px){
   body{font-size:18px;}
@@ -157,6 +157,38 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
   .cv h4{margin-top:16pt;}
   @page{margin:16mm;}
 }
+</style>
+<style>/* Majlis */
+
+/* ---- Theme 2a label face -------------------------------------------
+   Mono caps for the things that were already labels. Latin lands on
+   IBM Plex Mono, Arabic falls through to Naskh, so one token covers both. */
+:root{ --font-label:'IBM Plex Mono', 'Noto Naskh Arabic', ui-monospace, SFMono-Regular, monospace; }
+.kicker,.tag,.evtag,.orows dt,.sread dt,.ctrow h3,.fgroup h3,.needbox b,.ometa,
+.count,.btn,.btn.apply,.mc-nav-links,.mc-brand span{ font-family:var(--font-label); }
+.btn,.btn.apply{ text-transform:uppercase; letter-spacing:.1em; font-size:14px; }
+.btn.apply{ font-weight:500; }
+
+/* Headlines in the serif, in the band blue, both scripts. */
+.hero h1,.keybox h2,.srcbox h2,.mcbox h2,.oorg,.evclaim,.sread h3{ font-family:var(--font-display); }
+[dir="rtl"] .hero h1,[dir="rtl"] .keybox h2,[dir="rtl"] .srcbox h2,[dir="rtl"] .mcbox h2,
+[dir="rtl"] .oorg,[dir="rtl"] .evclaim,[dir="rtl"] .sread h3{ font-family:var(--font-ar); }
+
+/* Never track Arabic, never uppercase it. */
+[dir="rtl"] *{ letter-spacing:0 !important; }
+[dir="rtl"] .kicker,[dir="rtl"] .tag,[dir="rtl"] .evtag,[dir="rtl"] .orows dt,
+[dir="rtl"] .sread dt,[dir="rtl"] .needbox b,[dir="rtl"] .btn,
+[dir="rtl"] .ctrow h3,[dir="rtl"] .fgroup h3{ text-transform:none; }
+
+/* Gold at full strength only on blue. */
+.matcher .chip.on,#matcher .chip.on{ background:#C09A45 !important; color:#152A55 !important;
+  border-color:#C09A45 !important; }
+.tag.open{ background:#8A6A2E; border-color:#8A6A2E; color:#FAF5EA; }
+.evtag.causal{ background:#8A6A2E; border-color:#8A6A2E; color:#FAF5EA; }
+.subbox .btn{ background:#C09A45; color:#152A55; border-color:#C09A45; }
+.subbox .btn:hover{ background:#D9B863; border-color:#D9B863; color:#152A55; }
+*{ text-shadow:none; }
+:focus-visible{ outline:2px solid #C09A45; outline-offset:2px; }
 </style>
 </head>
 <body>
