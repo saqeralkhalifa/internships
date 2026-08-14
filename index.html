@@ -6,9 +6,29 @@
 <title>Internship Opportunities in Bahrain and the Gulf</title>
 <meta name="description" content="Every internship in Bahrain we could verify, with the real application link, when applications actually open, who each one is for, and honest evidence on what a placement is worth. Free, in Arabic and English, by Dr. Saqer AlKhalifa.">
 <script data-goatcounter="https://majorcompass.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="canonical" href="https://saqeralkhalifa.github.io/internships/">
 <link rel="alternate" hreflang="en" href="https://saqeralkhalifa.github.io/internships/?lang=en">
 <link rel="alternate" hreflang="ar" href="https://saqeralkhalifa.github.io/internships/?lang=ar">
 <link rel="alternate" hreflang="x-default" href="https://saqeralkhalifa.github.io/internships/">
+
+<!-- Sharing card. WhatsApp and Instagram read these; without them a forwarded
+     link arrives as a bare URL with no title and no picture. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Saqer AlKhalifa">
+<meta property="og:url" content="https://saqeralkhalifa.github.io/internships/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_BH">
+<meta property="og:title" content="Internships in Bahrain and the Gulf">
+<meta property="og:description" content="Bahrain's internship season is the spring, not the summer. 39 verified opportunities, the link that actually applies, and the month each one opens. Free, Arabic and English.">
+<meta property="og:image" content="https://saqeralkhalifa.github.io/internships/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Internships in Bahrain and the Gulf, by Dr. Saqer AlKhalifa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Internships in Bahrain and the Gulf">
+<meta name="twitter:description" content="39 verified opportunities, the link that actually applies, and the month each one opens. Free, Arabic and English.">
+<meta name="twitter:image" content="https://saqeralkhalifa.github.io/internships/share.png">
+<meta name="theme-color" content="#8c2f28">
 <script>
 /* MCLANG: one language resolver shared across Dr. Saqer AlKhalifa's student tools. */
 function mcInitLang(){
@@ -1360,7 +1380,7 @@ const APPLY = {
 "ghg-summer":        {email:"recruitment@gulfhotelsgroup.com", subject:"Summer Internship Programme application"},
 "brcs-volunteer":    {email:"volunteer@rcsbahrain.org", subject:"Volunteer membership application",
                       attach:{en:"the membership form from their website, your CPR, a photograph and your CV",
-                              ar:"نموذج العضوية من موقعهم، والبطاقة الذكية، وصورة شخصية، وسيرتك الذاتية"}},
+                              ar:"نموذج العضوية، البطاقة الذكية، صورة شخصية، السيرة الذاتية"}},
 "alba-ojt":          {email:"info@alba.com.bh", subject:"On the Job Training Programme application"},
 "amh-medical":       {email:"internship@amh.org.bh", subject:"Medical Internship Programme enquiry"},
 "rcsi-research-summer":{email:"rss@rcsi-mub.com", subject:"Research Summer School application"},
@@ -1389,23 +1409,25 @@ function applyBody(o, lang, extra){
   const org  = o.org[lang];
   const prog = o.prog[lang];
   if(lang === "ar"){
+    /* Kept deliberately short. Arabic percent-encodes to about nine characters
+       per letter, and several mail handlers cut a mailto link off past 2000. */
     return [
-      "السلام عليكم ورحمة الله وبركاته،",
+      "تحية طيبة،",
       "",
-      "أكتب إليكم للتقديم على " + prog + " لدى " + org + ".",
+      "أتقدم بطلب للالتحاق بـ" + prog + " لدى " + org + ".",
       "",
-      "الاسم: [اكتب اسمك الكامل كما في البطاقة الذكية]",
-      "الجامعة أو المدرسة: [اسم مؤسستك]",
-      "التخصص والسنة الدراسية: [مثال: محاسبة، السنة الثالثة]",
-      "الرقم الشخصي: [رقم بطاقتك الذكية]",
-      "رقم الهاتف: [رقمك]",
-      "الفترة المتاحة للتدريب: [مثال: من ١ يوليو إلى ٣١ أغسطس]",
+      "الاسم: [كما في البطاقة]",
+      "الجهة الدراسية: []",
+      "التخصص والسنة: [مثال: محاسبة، الثالثة]",
+      "الرقم الشخصي: []",
+      "الهاتف: []",
+      "الفترة المتاحة: [من / إلى]",
       "",
-      "سبب رغبتي في التدرب لديكم تحديدًا: [ثلاثة أسطر عن سبب اختيارك لهذه الجهة بالذات، لا عن نفسك]",
+      "سبب اختياري لكم: [ثلاثة أسطر عن الجهة]",
       "",
-      (extra ? "المرفقات: " + extra : "المرفقات: السيرة الذاتية.") ,
+      (extra ? "المرفقات: " + extra : "المرفق: السيرة الذاتية."),
       "",
-      "وشكرًا لكم على وقتكم،",
+      "وشكرًا،",
       "[اسمك]"
     ].join("\n");
   }
@@ -1733,11 +1755,32 @@ document.addEventListener("click", function(e){
   if(e.target.closest && e.target.closest(".evlink")) gc("io-evidence", "Evidence source");
 });
 
+/* The tab title, the bookmark and anything that reads the document head
+   should follow the language too, not sit in English on an Arabic page. */
+var DOCTITLE = {
+  en: "Internship Opportunities in Bahrain and the Gulf",
+  ar: "فرص التدريب في البحرين والخليج"
+};
+var DOCDESC = {
+  en: "Every internship in Bahrain we could verify, with the real application link, when applications actually open, who each one is for, and honest evidence on what a placement is worth. Free, in Arabic and English, by Dr. Saqer AlKhalifa.",
+  ar: "كل فرصة تدريب في البحرين تحققنا منها، مع الرابط الذي يُقدَّم من خلاله فعلًا، والشهر الذي يفتح فيه، ولمن هي، وأدلة صادقة عن قيمة التدريب. مجانًا، بالعربية والإنجليزية، من د. صقر آل خليفة."
+};
+function syncHead(){
+  document.title = DOCTITLE[LANG] || DOCTITLE.en;
+  var d = document.querySelector('meta[name="description"]');
+  if(d) d.setAttribute("content", DOCDESC[LANG] || DOCDESC.en);
+  var ol = document.querySelector('meta[property="og:locale"]');
+  if(ol) ol.setAttribute("content", LANG === "ar" ? "ar_BH" : "en_US");
+  var oa = document.querySelector('meta[property="og:locale:alternate"]');
+  if(oa) oa.setAttribute("content", LANG === "ar" ? "en_US" : "ar_BH");
+}
+
 document.getElementById("langToggle").addEventListener("click", function(){
   LANG = (LANG === "en") ? "ar" : "en";
   document.documentElement.lang = LANG;
   document.documentElement.dir = (LANG === "ar") ? "rtl" : "ltr";
   this.textContent = (LANG === "ar") ? "English" : "عربي";
+  syncHead();
   render();
 });
 
@@ -1750,6 +1793,7 @@ try{
   var _s = q.get("se"); if(_s && SECTORS.some(function(x){return x.k===_s;})) SE = _s;
 }catch(e){}
 
+syncHead();
 render();
 if(GRP){ try{ document.getElementById("matcher").scrollIntoView({block:"start"}); }catch(e){} }
 </script>
