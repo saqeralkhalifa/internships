@@ -6,10 +6,13 @@
 <title>Build a CV | Internship Opportunities</title>
 <meta name="description" content="A free CV builder for Gulf students with no experience yet. Fill the boxes, get a clean one page CV you can save as PDF and attach to an internship application. Arabic and English.">
 <script>
-/* The site now lives at the root of its own subdomain, so GoatCounter would
-   record every visit as "/" and collide with the other tools. Force the old
-   path prefix so the history before the move stays continuous. */
-window.goatcounter = {path: function(p){ return "/internships" + (p === "/" ? "" : p); }};
+/* This site is now the root of its own subdomain, so GoatCounter would log
+   every visit as "/". Keep the old prefix so the history stays continuous,
+   and strip the query string so ?lang= does not split one page into many. */
+window.goatcounter = {path: function(p){
+  p = p.replace(/[?#].*$/, "");
+  return "/internships" + (p === "/" ? "" : p);
+}};
 </script>
 <script data-goatcounter="https://majorcompass.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -454,7 +457,39 @@ $("langToggle").addEventListener("click", function(){
 
 load();
 chrome();
-if(mcInitLang() === "ar"){ $("langToggle").click(); }
+/* MCLANG v2, same rules as the rest of the ecosystem: apply the resolved
+   language, persist it, and stamp every internal link on the way out so the
+   choice survives the jump back to a different origin. */
+(function(){
+  var HOSTS = ["saqeralkhalifa.github.io", "internships.saqeralkhalifa.com",
+               "saqeralkhalifa.com", "www.saqeralkhalifa.com"];
+  function cur(){ return document.documentElement.lang === "ar" ? "ar" : "en"; }
+  function stamp(a){
+    try{
+      var raw = a.getAttribute("href");
+      if(!raw || raw.charAt(0) === "#") return;
+      var u = new URL(raw, location.href);
+      if(u.protocol !== "http:" && u.protocol !== "https:") return;
+      if(HOSTS.indexOf(u.hostname) === -1) return;
+      if(u.searchParams.has("lang")) return;
+      u.searchParams.set("lang", cur());
+      a.setAttribute("href", u.toString());
+    }catch(e){}
+  }
+  function onAnchor(e){
+    var t = e.target;
+    var a = (t && t.closest) ? t.closest("a[href]") : null;
+    if(a) stamp(a);
+  }
+  ["click", "auxclick", "contextmenu"].forEach(function(ev){
+    document.addEventListener(ev, onAnchor, true);
+  });
+
+  var want = mcInitLang();
+  if(want === "ar" && document.documentElement.lang !== "ar") $("langToggle").click();
+  if(want === "en" && document.documentElement.lang === "ar") $("langToggle").click();
+  mcSaveLang(want);
+})();
 </script>
 </body>
 </html>
