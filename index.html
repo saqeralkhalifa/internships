@@ -775,8 +775,8 @@ html, body{overflow-x:hidden;}
       <a href="https://saqeralkhalifa.github.io/major-compass/" data-en="Major Compass" data-ar="بوصلة التخصص">Major Compass</a>
     </nav>
     <div class="mc-nav-right">
-      <a class="mc-site" href="https://saqeralkhalifa.com/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي">saqeralkhalifa.com</a>
-      <a class="mc-book" href="https://saqeralkhalifa.com/#stores" data-en="The books" data-ar="الكتب">The books</a>
+      <a class="mc-site" href="https://saqeralkhalifa.com/" data-href-en="https://saqeralkhalifa.com/" data-href-ar="https://saqeralkhalifa.com/arabic/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي">saqeralkhalifa.com</a>
+      <a class="mc-book" href="https://saqeralkhalifa.com/#stores" data-href-en="https://saqeralkhalifa.com/#stores" data-href-ar="https://saqeralkhalifa.com/arabic/#buy" data-en="The books" data-ar="الكتب">The books</a>
       <button class="lang-toggle" id="langToggle">عربي</button>
     </div>
   </div>
@@ -1848,6 +1848,14 @@ if(GRP){ try{ document.getElementById("matcher").scrollIntoView({block:"start"})
     var l = document.documentElement.lang === "ar" ? "ar" : "en";
     var n = document.querySelectorAll("[data-en]");
     for(var i=0;i<n.length;i++){ n[i].textContent = n[i].getAttribute("data-"+l); }
+    /* Links that point at saqeralkhalifa.com have an Arabic twin. The
+       main site is two separate pages, not a toggle, so the href has to
+       move with the language or an Arabic reader lands in English. */
+    var h = document.querySelectorAll("[data-href-en]");
+    for(var j=0;j<h.length;j++){
+      var v = h[j].getAttribute("data-href-"+l);
+      if(v) h[j].setAttribute("href", v);
+    }
   }
   try{ new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]}); }catch(e){}
   document.addEventListener("click", function(e){ if(e.target && e.target.id === "langToggle") setTimeout(sync, 0); }, true);

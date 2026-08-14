@@ -198,7 +198,7 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
     <a class="brand" href="./" data-en="Internship Opportunities" data-ar="فرص التدريب">Internship Opportunities</a>
     <div class="right">
       <a href="./" data-en="Back to internships" data-ar="عودة إلى الفرص">Back to internships</a>
-      <a href="https://saqeralkhalifa.com/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي">saqeralkhalifa.com</a>
+      <a href="https://saqeralkhalifa.com/" data-href-en="https://saqeralkhalifa.com/" data-href-ar="https://saqeralkhalifa.com/arabic/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي">saqeralkhalifa.com</a>
       <button class="lang" id="langToggle">عربي</button>
     </div>
   </div>
@@ -369,6 +369,11 @@ function chrome(){
   $("saved").textContent = t.saved;
   var n = document.querySelectorAll("[data-en]");
   for(var i=0;i<n.length;i++){ n[i].textContent = n[i].getAttribute("data-"+LANG); }
+  var h = document.querySelectorAll("[data-href-en]");
+  for(var j=0;j<h.length;j++){
+    var v = h[j].getAttribute("data-href-"+LANG);
+    if(v) h[j].setAttribute("href", v);
+  }
 }
 
 function collect(){
