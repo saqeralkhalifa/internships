@@ -657,6 +657,43 @@ footer.site{border-top:1px solid var(--line); margin-top:44px;}
   .sread{padding:22px 20px;}
 }
 </style>
+<style>
+/* ---- apply row ---- */
+.applyrow{margin-top:20px; display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
+.btn.apply{background:var(--accent); color:#fff; border:1px solid var(--accent);
+  padding:12px 22px; font-size:16px; font-weight:600; text-decoration:none; border-radius:0;
+  min-height:46px; display:inline-flex; align-items:center;}
+.btn.apply:hover{background:#a8382f; border-color:#a8382f; color:#fff;}
+.btn.apply.mail{background:transparent; color:var(--accent);}
+.btn.apply.mail:hover{background:var(--accent); color:#fff;}
+.applyrow .olink{margin-top:0;}
+.needbox{margin-top:16px; background:var(--paper-2); border-inline-start:3px solid var(--line-2);
+  padding:16px 20px;}
+.needbox b{display:block; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); margin-bottom:8px;}
+[dir="rtl"] .needbox b{letter-spacing:.02em; font-size:14px;}
+.needbox p{font-size:17px; line-height:1.75; color:var(--ink-2);}
+.cvlink{display:inline-block; margin-top:14px; font-size:15px; color:var(--ink-3);
+  text-decoration:none; border-bottom:1px dotted var(--line-2);}
+.cvlink:hover{color:var(--accent); border-bottom-color:var(--accent);}
+
+/* ---- mobile: real tap targets, no horizontal scroll ---- */
+html, body{overflow-x:hidden;}
+@media (max-width:760px){
+  .applyrow{gap:10px;}
+  .btn.apply{width:100%; justify-content:center; min-height:50px; font-size:17px;}
+  .applyrow .olink{width:100%;}
+  .chip{min-height:42px; display:inline-flex; align-items:center; font-size:16px; padding:8px 15px;}
+  .needbox p{font-size:16px;}
+  .mc-nav-inner{padding:10px 16px;}
+  .mc-nav .lang-toggle{min-height:40px; padding:8px 16px; font-size:13px;}
+  .mc-nav-links a{padding-block:10px;}
+  .olink{padding-block:8px;}
+  .wrap{padding-inline:18px;}
+  .opp{padding:20px 16px;}
+  .evnote{padding:14px 16px;}
+}
+</style>
 
 </head>
 <body>
@@ -1290,6 +1327,109 @@ const GROUP_LABELS = [
   {k:"sci",    en:"Pure sciences",              ar:"العلوم الأساسية"}
 ];
 
+/* How you actually apply, per listing.
+   direct : the page that IS the application, not a careers landing page.
+   email  : apply by email. We prefill subject and body so the student only fills the blanks.
+   need   : what the email must contain, shown when there is no address to prefill.
+   Checked 14 August 2026. */
+
+const APPLY = {
+
+/* ---- direct application pages ---- */
+"silah-grad":        {direct:"https://silah.bh/careers/"},
+"silah-intern":      {direct:"https://silah.bh/careers/"},
+"bfb-bd-intern":     {direct:"https://www.bahrainfintechbay.com/careers/business-development-intern"},
+"apm-marsa":         {direct:"https://www.apmterminals.com/en/bahrain/careers/internships-program",
+                      email:"hrbah@apmterminals.com"},
+"microsoft-bh-intern":{direct:"https://jobs.careers.microsoft.com/global/en/search?lc=Bahrain"},
+"edb-internship":    {direct:"https://www.bahrainedb.com/about-us/career-opportunities/edb-internship-programme"},
+"bapco-empower":     {direct:"https://www.bapcoenergies.com/empower-program"},
+"cpisp":             {direct:"https://www.cpisp.bh/CPISPapplication/"},
+"uob-early-access":  {direct:"https://sis.uob.edu.bh/"},
+"mkf-rayaat":        {direct:"https://mkfbh.org/rayaat"},
+"mkf-watheq":        {direct:"https://mkfbh.org/watheq"},
+"ncst-secondary":    {direct:"https://ncst.edu.bh/academic/programmes-courses/"},
+"youth-city-2030":   {direct:"https://www.mya.gov.bh/en/faq-youth-city-2030"},
+"gib-internship":    {direct:"https://careers.gib.com/en/bahrain/"},
+"batelco-grad":      {direct:"https://careers.batelco.com/en/bahrain/"},
+"khuh-academy":      {direct:"https://www.khuh.org.bh/en/healthcareacademy"},
+
+/* ---- email applications, prefilled ---- */
+"kpmg-hussain-kasim":{email:"bh-fmcareers@kpmg.com", subject:"Hussain Kasim Internship Program"},
+"sico-summer":       {email:"Careers@sicobank.com",  subject:"Summer Internship Programme application"},
+"ghg-summer":        {email:"recruitment@gulfhotelsgroup.com", subject:"Summer Internship Programme application"},
+"brcs-volunteer":    {email:"volunteer@rcsbahrain.org", subject:"Volunteer membership application",
+                      attach:{en:"the membership form from their website, your CPR, a photograph and your CV",
+                              ar:"نموذج العضوية من موقعهم، والبطاقة الذكية، وصورة شخصية، وسيرتك الذاتية"}},
+"alba-ojt":          {email:"info@alba.com.bh", subject:"On the Job Training Programme application"},
+"amh-medical":       {email:"internship@amh.org.bh", subject:"Medical Internship Programme enquiry"},
+"rcsi-research-summer":{email:"rss@rcsi-mub.com", subject:"Research Summer School application"},
+
+/* ---- no published route: say what the email must contain ---- */
+"hassan-radhi-law":  {need:true},
+"bisb-athr":         {need:true},
+"benefit-masar":     {need:true},
+"alsalam-summer":    {need:true},
+"bbk-nextgen":       {need:true},
+"solidarity-tamayaz":{need:true},
+"bourse-emerging":   {need:true},
+"khaleeji-intern":   {need:true},
+"asry-summer":       {need:true},
+"gpic-summer":       {need:true},
+"nbb-evolve":        {need:true},
+"stc-emerge":        {need:true},
+"zain-career-connect":{need:true},
+"injaz-company":     {need:true},
+"kfh-bh-summer":     {need:true},
+"bapco-idt-grad":    {direct:"https://www.bapcoenergies.com/careers"}
+};
+
+/* The body we prefill. The student replaces the bracketed parts. */
+function applyBody(o, lang, extra){
+  const org  = o.org[lang];
+  const prog = o.prog[lang];
+  if(lang === "ar"){
+    return [
+      "السلام عليكم ورحمة الله وبركاته،",
+      "",
+      "أكتب إليكم للتقديم على " + prog + " لدى " + org + ".",
+      "",
+      "الاسم: [اكتب اسمك الكامل كما في البطاقة الذكية]",
+      "الجامعة أو المدرسة: [اسم مؤسستك]",
+      "التخصص والسنة الدراسية: [مثال: محاسبة، السنة الثالثة]",
+      "الرقم الشخصي: [رقم بطاقتك الذكية]",
+      "رقم الهاتف: [رقمك]",
+      "الفترة المتاحة للتدريب: [مثال: من ١ يوليو إلى ٣١ أغسطس]",
+      "",
+      "سبب رغبتي في التدرب لديكم تحديدًا: [ثلاثة أسطر عن سبب اختيارك لهذه الجهة بالذات، لا عن نفسك]",
+      "",
+      (extra ? "المرفقات: " + extra : "المرفقات: السيرة الذاتية.") ,
+      "",
+      "وشكرًا لكم على وقتكم،",
+      "[اسمك]"
+    ].join("\n");
+  }
+  return [
+    "Dear Sir or Madam,",
+    "",
+    "I am writing to apply for the " + prog + " at " + org + ".",
+    "",
+    "Name: [your full name as it appears on your CPR]",
+    "University or school: [your institution]",
+    "Subject and year: [for example, Accounting, third year]",
+    "CPR number: [your CPR]",
+    "Phone: [your number]",
+    "Dates I am available: [for example, 1 July to 31 August]",
+    "",
+    "Why I want to train with you specifically: [three lines about why this organisation, not about yourself]",
+    "",
+    (extra ? "Attached: " + extra : "Attached: my CV."),
+    "",
+    "Thank you for your time,",
+    "[your name]"
+  ].join("\n");
+}
+
 
 const CTS = [
   {k:"bh", en:"Bahrain",      ar:"البحرين",  live:true},
@@ -1342,7 +1482,11 @@ en:{
   none:"Nothing matches those filters. Try widening one of them.",
   soon:"Not yet researched. Bahrain came first because the sweep is slow and done by hand.",
   dWhen:"When to apply", dWho:"Who can apply", dHow:"How to apply", dLong:"How long",
-  more:"Open the official page", checked:(d)=>"Checked "+d,
+  more:"Read the official page", checked:(d)=>"Checked "+d,
+  applyDirect:"Apply now", applyEmail:"Open a ready email",
+  applyNeedT:"There is no application link, so send an email",
+  applyNeed:"Find the careers or human resources address on their site, then send: your full name as on your CPR, your university or school, your subject and year, your CPR number, your phone, the exact dates you are free, three lines on why that organisation and not another, and your CV attached. Keep it under one screen.",
+  cvHelp:"No CV yet? Build one in five minutes",
   paidNo:"Unpaid", paidYes:"Paid",
   sGood:"Good for", sExpect:"Expect", sLeads:"Where it leads",
   eH:"What an internship is actually worth",
@@ -1374,7 +1518,11 @@ ar:{
   none:"لا شيء يطابق هذه المرشّحات. جرّب توسيع أحدها.",
   soon:"لم تُبحث بعد. بدأنا بالبحرين لأن الحصر بطيء ويجري يدويًا.",
   dWhen:"موعد التقديم", dWho:"لمن", dHow:"كيف تقدّم", dLong:"المدة",
-  more:"افتح الصفحة الرسمية", checked:(d)=>"جرى التحقق في "+d,
+  more:"اقرأ الصفحة الرسمية", checked:(d)=>"جرى التحقق في "+d,
+  applyDirect:"قدّم الآن", applyEmail:"افتح رسالة جاهزة",
+  applyNeedT:"لا يوجد رابط تقديم، فأرسل بريدًا إلكترونيًا",
+  applyNeed:"ابحث في موقعهم عن بريد التوظيف أو الموارد البشرية، ثم أرسل: اسمك الكامل كما في البطاقة الذكية، وجامعتك أو مدرستك، وتخصصك وسنتك، ورقمك الشخصي، ورقم هاتفك، والتواريخ التي تتفرغ فيها بالضبط، وثلاثة أسطر عن سبب اختيارك لهذه الجهة دون غيرها، ومرفقًا سيرتك الذاتية. واجعلها في حدود شاشة واحدة.",
+  cvHelp:"ليس لديك سيرة ذاتية؟ اصنعها في خمس دقائق",
   paidNo:"بلا أجر", paidYes:"بأجر",
   sGood:"مفيد لـ", sExpect:"ما تتوقعه", sLeads:"إلى أين يقود",
   eH:"ما قيمة التدريب فعلًا",
@@ -1516,7 +1664,7 @@ function render(){
         '<dt>'+t.dLong+'</dt><dd>'+tx(o.duration)+'</dd>'+
         '<dt>'+t.dHow+'</dt><dd>'+tx(o.how)+'</dd>'+
       '</dl>'+
-      '<a class="olink" href="'+o.url+'" target="_blank" rel="noopener">'+t.more+'</a>'+
+      applyBlock(o, t)+
       '<div class="ometa">'+t.checked(o.checked)+'</div>'+
     '</div>';
   }).join("") : '<div class="empty">'+t.none+'</div>';
@@ -1537,6 +1685,28 @@ function render(){
   document.getElementById("t-foot").textContent = t.foot;
 }
 
+function applyBlock(o, t){
+  var a = (typeof APPLY !== "undefined" && APPLY[o.id]) || {};
+  var out = '<div class="applyrow">';
+  if(a.direct){
+    out += '<a class="btn apply" href="'+a.direct+'" target="_blank" rel="noopener">'+t.applyDirect+'</a>';
+  }
+  if(a.email){
+    var extra = a.attach ? a.attach[LANG] : null;
+    var href = "mailto:" + a.email +
+      "?subject=" + encodeURIComponent(a.subject || (o.prog[LANG] + " " + (LANG==="en"?"application":"طلب تدريب"))) +
+      "&body=" + encodeURIComponent(applyBody(o, LANG, extra));
+    out += '<a class="btn apply mail" href="'+href+'">'+t.applyEmail+'</a>';
+  }
+  out += '<a class="olink" href="'+o.url+'" target="_blank" rel="noopener">'+t.more+'</a>';
+  out += '</div>';
+  if(!a.direct && !a.email){
+    out += '<div class="needbox"><b>'+t.applyNeedT+'</b><p>'+t.applyNeed+'</p></div>';
+  }
+  out += '<a class="cvlink" href="cv.html">'+t.cvHelp+'</a>';
+  return out;
+}
+
 function gc(path, title){
   if(window.goatcounter && window.goatcounter.count){
     try{ window.goatcounter.count({path:path, title:title, event:true}); }catch(e){}
@@ -1555,6 +1725,9 @@ document.addEventListener("click", function(e){
     return;
   }
   if(e.target.closest && e.target.closest(".olink")) gc("io-out", "Outbound to employer");
+  if(e.target.closest && e.target.closest(".btn.apply.mail")) gc("io-mail", "Prefilled email opened");
+  else if(e.target.closest && e.target.closest(".btn.apply")) gc("io-apply", "Direct apply opened");
+  if(e.target.closest && e.target.closest(".cvlink")) gc("io-cv", "CV builder opened");
   if(e.target.closest && e.target.closest("#s-btn")) gc("io-submit", "Employer submit");
   if(e.target.closest && e.target.closest(".mccard")) gc("io-mc", "Across to Major Compass");
   if(e.target.closest && e.target.closest(".evlink")) gc("io-evidence", "Evidence source");
