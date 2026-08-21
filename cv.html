@@ -8,7 +8,7 @@
 <script data-goatcounter="https://majorcompass.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script>
 function mcInitLang(){
   try{
@@ -24,15 +24,15 @@ function mcInitLang(){
 function mcSaveLang(v){ try{ localStorage.setItem("mc-lang", v); }catch(e){} }
 </script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;border-radius:0;}
+*{margin:0;padding:0;box-sizing:border-box;border-radius:2px;}
 :root{
-  --paper:#faf8f4; --paper-2:#f2eee7; --card:#ffffff;
-  --line:#e2ddd3; --line-2:#c9c2b5;
-  --ink:#1a1712; --ink-2:#3c372f; --ink-3:#6f6a60;
-  --accent:#8c2f28; --deep:#1c3630;
-  --serif:'Playfair Display', Georgia, serif;
-  --sans:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-  --ar:'IBM Plex Sans Arabic','IBM Plex Sans', sans-serif;
+  --paper:#FAF5EA; --paper-2:#EFE4CE; --card:#FFFBF2;
+  --line:#E2D5BB; --line-2:#D3C0A0;
+  --ink:#4A3728; --ink-2:#6B5B47; --ink-3:#6F5D4A; --band:#152A55; --gold:#C09A45; --gold-dark:#7D5F27; --on-band:#F3EADA;
+  --accent:#1E3A78; --deep:#152A55;
+  --serif:'EB Garamond', Georgia, serif; --mono:'IBM Plex Mono', ui-monospace, monospace;
+  --sans:'EB Garamond', Georgia, serif;
+  --ar:'Noto Naskh Arabic','EB Garamond', serif;
 }
 body{background:var(--paper); color:var(--ink-2); font-family:var(--sans);
   font-size:19px; line-height:1.75; overflow-x:hidden;}
@@ -40,34 +40,34 @@ body{background:var(--paper); color:var(--ink-2); font-family:var(--sans);
 .wrap{max-width:900px; margin:0 auto; padding:0 22px 90px;}
 
 /* nav */
-.nav{background:#1a1712; padding:12px 0;}
+.nav{background:var(--band); border-bottom:1px solid #2E4477; padding:12px 0;}
 .nav-in{max-width:1160px; margin:0 auto; padding:0 22px; display:flex; align-items:center;
   justify-content:space-between; gap:16px; flex-wrap:wrap;}
-.nav a.brand{font-family:var(--serif); font-weight:600; font-size:19px; color:#f7f4ee; text-decoration:none;}
+.nav a.brand{font-family:var(--serif); font-weight:600; font-size:19px; color:var(--on-band); text-decoration:none;}
 [dir="rtl"] .nav a.brand{font-family:var(--ar);}
 .nav .right{display:flex; gap:10px; align-items:center;}
-.nav .right a{color:#cfc9bd; font-size:13px; text-decoration:none;}
+.nav .right a{color:#D3DCEF; font-family:var(--mono); font-size:13px; text-decoration:none;}
 .nav .right a:hover{color:#fff;}
-.lang{background:transparent; border:1px solid #4a443b; color:#e8e3d9; padding:5px 13px;
+.lang{background:var(--gold); border:1px solid var(--gold); color:var(--band); font-family:var(--mono); padding:5px 13px;
   font-size:12px; font-weight:600; letter-spacing:.06em; cursor:pointer; font-family:inherit;}
-.lang:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
+.lang:hover{background:var(--on-band); border-color:var(--on-band); color:var(--band);}
 
-h1{font-family:var(--serif); font-weight:600; font-size:60px; line-height:1.08; color:var(--ink);
+h1{font-family:var(--serif); font-weight:400; font-size:60px; line-height:1.08; color:var(--band);
   margin-top:20px; letter-spacing:-.015em;}
 [dir="rtl"] h1{font-family:var(--ar); font-size:48px; line-height:1.32;}
-.kicker{font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+.kicker{font-family:var(--mono); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-dark); font-weight:500;}
 [dir="rtl"] .kicker{letter-spacing:.04em; font-size:15px;}
 .hero{padding:56px 0 28px; border-bottom:1px solid var(--line);}
 .lede{font-size:20px; line-height:1.7; color:var(--ink-2); margin-top:22px; max-width:660px;}
 
-.note{background:var(--card); border:1px solid var(--line); border-inline-start:5px solid var(--accent);
+.note{background:var(--card); border:1px solid var(--line); border-inline-start:4px solid var(--gold);
   padding:24px 28px; margin-top:30px;}
-.note b{font-family:var(--serif); font-weight:600; font-size:23px; color:var(--ink); display:block; margin-bottom:8px;}
+.note b{font-family:var(--serif); font-weight:500; font-size:23px; color:var(--band); display:block; margin-bottom:8px;}
 [dir="rtl"] .note b{font-family:var(--ar); font-size:21px;}
 .note p{font-size:18px; line-height:1.8;}
 
 section.blk{margin-top:40px; border-top:2px solid var(--ink); padding-top:22px;}
-section.blk h2{font-family:var(--serif); font-weight:600; font-size:28px; color:var(--ink);}
+section.blk h2{font-family:var(--serif); font-weight:400; font-size:28px; color:var(--band);}
 [dir="rtl"] section.blk h2{font-family:var(--ar); font-size:25px;}
 section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-height:1.7;}
 
@@ -93,12 +93,12 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
 .add:hover{border-color:var(--accent); color:var(--accent);}
 
 .actions{margin-top:40px; display:flex; flex-wrap:wrap; gap:12px;}
-.btn{background:var(--accent); color:#fff; border:1px solid var(--accent); padding:15px 28px;
+.btn{background:var(--band); color:var(--on-band); border:1px solid var(--band); padding:15px 28px;
   font-family:inherit; font-size:17px; font-weight:600; cursor:pointer; text-decoration:none;
   min-height:52px; display:inline-flex; align-items:center; justify-content:center;}
-.btn:hover{background:#a8382f; border-color:#a8382f;}
-.btn.ghost{background:transparent; color:var(--accent);}
-.btn.ghost:hover{background:var(--accent); color:#fff;}
+.btn:hover{background:var(--accent); border-color:var(--accent);}
+.btn.ghost{background:transparent; color:var(--band);}
+.btn.ghost:hover{background:var(--band); color:var(--on-band);}
 .saved{font-size:15px; color:var(--ink-3); margin-top:12px;}
 
 /* the rendered CV */
@@ -109,7 +109,7 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
 [dir="rtl"] .cv h3{font-family:var(--ar); font-size:32px;}
 .cv .contact{font-size:16px; color:#4a453c; margin-top:10px; line-height:1.7;}
 .cv .rule{height:2px; background:#16130f; margin:22px 0 0;}
-.cv h4{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#8c2f28;
+.cv h4{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-dark); font-family:var(--mono);
   font-weight:700; margin-top:26px; padding-bottom:7px; border-bottom:1px solid #ddd8ce;}
 [dir="rtl"] .cv h4{letter-spacing:.03em; font-size:15px;}
 .cv .item{margin-top:14px;}
@@ -156,7 +156,7 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
     <a class="brand" href="./" data-en="Internship Opportunities" data-ar="فرص التدريب">Internship Opportunities</a>
     <div class="right">
       <a href="./" data-en="Back to internships" data-ar="عودة إلى الفرص">Back to internships</a>
-      <a href="https://saqeralkhalifa.com/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي">saqeralkhalifa.com</a>
+      <a href="https://saqeralkhalifa.com/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي" data-href-en="https://saqeralkhalifa.com/" data-href-ar="https://saqeralkhalifa.com/arabic/">saqeralkhalifa.com</a>
       <button class="lang" id="langToggle">عربي</button>
     </div>
   </div>
@@ -326,7 +326,8 @@ function chrome(){
   $("build").textContent = t.build; $("print").textContent = t.print; $("copy").textContent = t.copy;
   $("saved").textContent = t.saved;
   var n = document.querySelectorAll("[data-en]");
-  for(var i=0;i<n.length;i++){ n[i].textContent = n[i].getAttribute("data-"+LANG); }
+  for(var i=0;i<n.length;i++){ n[i].textContent = n[i].getAttribute("data-"+LANG);
+    var h = n[i].getAttribute("data-href-"+LANG); if(h) n[i].setAttribute("href", h); }
 }
 
 function collect(){

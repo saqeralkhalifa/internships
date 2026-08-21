@@ -487,183 +487,14 @@ html{scroll-padding-top:76px;}
   .mcgrid{grid-template-columns:1fr;}
 }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ================= THEME 01 BROADSHEET =================
-   A scholarly newspaper. Hairline rules, tabular listings,
-   one oxblood accent doing all the work. Square corners. */
-:root{
-  --font-display:'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body:'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
 
-  --paper:#faf8f4; --paper-2:#f2eee7; --card:#ffffff;
-  --line:#e2ddd3; --line-2:#c9c2b5;
-  --ink:#1a1712; --ink-2:#3c372f; --ink-3:#6f6a60;
-  --navy:#1a1712; --navy-deep:#8c2f28;
-  --accent:#8c2f28; --accent-soft:#f5ece9; --accent-line:#d9bdb9;
-  --gold:#8c2f28; --gold-soft:#f5ece9; --gold-line:#e2ddd3; --gold-bright:#d8a49c;
-  --radius:0; --radius-sm:0; --shadow:none; --shadow-lift:none;
-
-  --mc-paper:#faf8f4; --mc-band:#f2eee7; --mc-card:#ffffff;
-  --mc-ink:#1a1712; --mc-ink-2:#3c372f; --mc-ink-3:#6f6a60; --mc-muted:#6f6a60;
-  --mc-rule:#e2ddd3; --mc-border:#c9c2b5;
-  --mc-accent:#8c2f28; --mc-accent-dim:#d8a49c;
-  --mc-on-dark:#faf8f4; --mc-on-dark-2:#a9a49a; --mc-dark-rule:#332e27;
-  --mc-serif:'Playfair Display', Georgia, serif;
-
-  --deep:#1c3630;          /* the one dark panel colour */
-  --muted:#6f6a60; --sec:#3c372f; --body:#3c372f;
-}
-body{background:var(--paper); color:var(--ink-2); font-size:19px; line-height:1.75;}
-.wrap{max-width:1000px;}
-
-/* ---- masthead ---- */
-.mc-nav{background:#1a1712;}
-.mc-brand b{font-family:var(--font-display); font-weight:600; font-size:19px; letter-spacing:.01em;}
-.mc-nav-inner{gap:20px;}
-.mc-nav-links{font-size:13px; letter-spacing:.02em; gap:14px; flex:0 1 auto;}
-.mc-nav-right{gap:11px; flex:0 0 auto;}
-.mc-site{font-size:12px;}
-.mc-book{font-size:12px; padding:6px 12px;}
-.mc-brand span{font-size:10.5px; letter-spacing:.1em;}
-@media (max-width:1080px){ .mc-site{display:none;} }
-.mc-nav-links a{color:#cfc9bd;}
-.mc-nav .lang-toggle{background:transparent; border:1px solid #4a443b; color:#e8e3d9;
-  border-radius:0; font-weight:600; letter-spacing:.06em; padding:5px 13px;}
-.mc-nav .lang-toggle:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
-.mc-book{border-radius:0 !important;}
-
-/* ---- hero ---- */
-.hero{text-align:start; padding:64px 0 30px; border-bottom:1px solid var(--line);}
-.kicker{font-family:var(--font-body); font-size:13px; letter-spacing:.22em; text-transform:uppercase;
-  color:var(--accent); font-weight:600;}
-[dir="rtl"] .kicker{letter-spacing:.04em; font-size:15px;}
-.hero h1{font-family:var(--font-display); font-weight:600; font-size:76px; line-height:1.06;
-  letter-spacing:-.015em; color:var(--ink); margin-top:20px; max-width:14ch;}
-[dir="rtl"] .hero h1{font-family:var(--font-ar); font-weight:600; font-size:62px; line-height:1.3; max-width:none;}
-.hero p.sub{font-size:21px; line-height:1.65; color:var(--ink-2); max-width:640px; margin:24px 0 0;}
-
-/* ---- the season callout: oxblood spine ---- */
-.keybox{background:var(--card); border:1px solid var(--line); border-inline-start:5px solid var(--accent);
-  padding:30px 34px; margin:36px 0 0;}
-.keybox h2{font-family:var(--font-display); font-weight:600; font-size:31px; line-height:1.32; color:var(--ink);}
-[dir="rtl"] .keybox h2{font-family:var(--font-ar); font-size:28px;}
-.keybox p{font-size:19px; line-height:1.8; color:var(--ink-2); margin-top:12px;}
-
-/* ---- quiz matcher: the one dark slab ---- */
-.matcher{background:var(--deep); padding:38px 34px; margin-top:34px;}
-.matcher h2{font-family:var(--font-display); font-weight:600; font-size:31px; color:#f4f1ea; line-height:1.3;}
-[dir="rtl"] .matcher h2{font-family:var(--font-ar); font-size:28px;}
-.matcher p{color:#b4c2bc; font-size:18px; margin-top:11px;}
-.matcher a{color:#e8b3ac;}
-#matcher .chip, .matcher .chip{background:transparent; color:#e9e5dc !important;
-  border-color:#4a6a61 !important; border-radius:0;}
-#matcher .chip:hover, .matcher .chip:hover{border-color:#e8b3ac !important; color:#ffffff !important;}
-#matcher .chip.on, .matcher .chip.on{background:#f4f1ea !important; color:#1c3630 !important;
-  border-color:#f4f1ea !important;}
-.matcher .hint{color:#8fa39c; font-size:15px;}
-
-/* ---- filters ---- */
-.ctrow h3, .fgroup h3{font-size:12px; letter-spacing:.2em; color:var(--ink-3); font-weight:600;}
-[dir="rtl"] .ctrow h3, [dir="rtl"] .fgroup h3{letter-spacing:.02em; font-size:15px;}
-.chip{border-radius:0; background:transparent; border-color:var(--line-2); color:var(--ink-2); font-size:15px;}
-.chip.on{background:var(--ink); border-color:var(--ink); color:var(--paper);}
-.count{font-size:15px; color:var(--ink-3); border-top:1px solid var(--line); padding-top:16px;}
-
-/* ---- listings as ledger blocks ---- */
-#list{border-top:2px solid var(--ink);}
-.opp{background:var(--card); border:1px solid var(--line); border-top:0; padding:26px 30px;}
-.opp:first-child{border-top:1px solid var(--line);}
-.oorg{font-family:var(--font-display); font-weight:600; font-size:25px; color:var(--ink); line-height:1.28;}
-[dir="rtl"] .oorg{font-family:var(--font-ar); font-size:23px;}
-.oprog{font-size:17px; color:var(--ink-3);}
-.tag{border-radius:0; font-size:11px; letter-spacing:.16em; border-color:var(--line-2); color:var(--ink-3);}
-[dir="rtl"] .tag{letter-spacing:.02em; font-size:13px;}
-.tag.open{background:var(--accent); border-color:var(--accent); color:#fff;}
-.orows{margin-top:18px; grid-template-columns:170px 1fr; gap:0 22px; border-top:1px solid var(--line);}
-.orows dt{font-size:12px; letter-spacing:.14em; color:var(--ink-3); padding:13px 0 0;
-  border-bottom:1px solid var(--line);}
-[dir="rtl"] .orows dt{letter-spacing:.02em; font-size:14px;}
-.orows dd{font-size:18px; line-height:1.7; color:var(--ink-2); padding:13px 0;
-  border-bottom:1px solid var(--line);}
-.orows dt{padding-bottom:13px;}
-.olink{font-size:16px; color:var(--accent); border-bottom:1px solid var(--accent);}
-.ometa{font-size:13px; color:var(--ink-3); letter-spacing:.03em;}
-
-/* ---- sector read ---- */
-.sread{background:var(--paper-2); border:0; border-inline-start:5px solid var(--accent); padding:26px 30px;}
-.sread h3{font-family:var(--font-display); font-weight:600; font-size:22px; color:var(--ink);}
-[dir="rtl"] .sread h3{font-family:var(--font-ar);}
-.sread dt{font-size:12px; letter-spacing:.14em; color:var(--ink-3);}
-[dir="rtl"] .sread dt{letter-spacing:.02em; font-size:14px;}
-.sread dd{font-size:18px;}
-
-/* ---- evidence ---- */
-.srcbox h2{font-family:var(--font-display); font-weight:600; font-size:34px; color:var(--ink); line-height:1.25;}
-[dir="rtl"] .srcbox h2{font-family:var(--font-ar); font-size:30px;}
-#evlist{border-top:2px solid var(--ink);}
-.ev{border-top:1px solid var(--line); padding:26px 0;}
-.ev:first-of-type{border-top:0;}
-.evtag{border-radius:0; font-size:11px; letter-spacing:.16em; border-color:var(--line-2); color:var(--ink-3);}
-[dir="rtl"] .evtag{letter-spacing:.02em; font-size:13px;}
-.evtag.causal{background:var(--accent); border-color:var(--accent); color:#fff;}
-.evtag.contested, .evtag.gap{background:var(--ink); border-color:var(--ink); color:var(--paper);}
-.evclaim{font-family:var(--font-display); font-weight:500; font-size:24px; line-height:1.45; color:var(--ink);}
-[dir="rtl"] .evclaim{font-family:var(--font-ar); font-weight:600; font-size:21px; line-height:1.7;}
-.evsrc{font-size:15px;}
-.evnote{background:var(--paper-2); font-size:17px; line-height:1.75; padding:16px 20px;
-  border-inline-start:3px solid var(--line-2);}
-.evlink{color:var(--accent); border-bottom-color:var(--accent);}
-
-/* ---- employer call to action ---- */
-.subbox{background:var(--ink); padding:42px 36px;}
-.subbox h2{font-family:var(--font-display); font-weight:600; font-size:31px; color:#f7f4ee;}
-[dir="rtl"] .subbox h2{font-family:var(--font-ar); font-size:28px;}
-.subbox p{color:#b8b2a6; font-size:18px;}
-.subbox .btn{border-radius:0; background:var(--accent); color:#fff; border-color:var(--accent); font-size:17px;}
-.subbox .btn:hover{background:#a8382f; border-color:#a8382f; color:#fff;}
-
-/* ---- across to Major Compass ---- */
-.mcbox{border-top:2px solid var(--ink); padding-top:34px;}
-.mcbox h2{font-family:var(--font-display); font-weight:600; font-size:28px; color:var(--ink);}
-[dir="rtl"] .mcbox h2{font-family:var(--font-ar); font-size:25px;}
-.mccard{border-radius:0; border-color:var(--line); background:var(--card); padding:24px;}
-.mccard:hover{border-color:var(--accent);}
-.mccard b{font-family:var(--font-display); font-weight:600; font-size:19px;}
-[dir="rtl"] .mccard b{font-family:var(--font-ar);}
-.mccard span{font-size:16px;}
-
-.btn{border-radius:0;}
-footer.site{border-top:1px solid var(--line); margin-top:44px;}
-
-@media (max-width:760px){
-  body{font-size:18px;}
-  .hero{padding:40px 0 24px;}
-  .hero h1{font-size:44px; line-height:1.12; max-width:none;}
-  [dir="rtl"] .hero h1{font-size:39px;}
-  .hero p.sub{font-size:19px;}
-  .keybox{padding:24px 22px; border-inline-start-width:4px;}
-  .keybox h2{font-size:25px;}
-  .matcher{padding:26px 22px;}
-  .matcher h2{font-size:25px;}
-  .opp{padding:22px 20px;}
-  .oorg{font-size:22px;}
-  .orows{grid-template-columns:1fr; gap:0;}
-  .orows dt{border-bottom:0; padding:14px 0 0;}
-  .orows dd{padding:4px 0 14px;}
-  .evclaim{font-size:21px;}
-  .srcbox h2{font-size:28px;}
-  .subbox{padding:30px 22px;}
-  .sread{padding:22px 20px;}
-}
-</style>
 <style>
 /* ---- apply row ---- */
 .applyrow{margin-top:20px; display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
 .btn.apply{background:var(--accent); color:#fff; border:1px solid var(--accent);
   padding:12px 22px; font-size:16px; font-weight:600; text-decoration:none; border-radius:0;
   min-height:46px; display:inline-flex; align-items:center;}
-.btn.apply:hover{background:#a8382f; border-color:#a8382f; color:#fff;}
+.btn.apply:hover{background:#1E3A78; border-color:#1E3A78; color:#F3EADA;}
 .btn.apply.mail{background:transparent; color:var(--accent);}
 .btn.apply.mail:hover{background:var(--accent); color:#fff;}
 .applyrow .olink{margin-top:0;}
@@ -695,6 +526,254 @@ html, body{overflow-x:hidden;}
 }
 </style>
 
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ================= THEME 2a MAJLIS, BLUE BAND =================
+   The same look as saqeralkhalifa.com: cream paper, one deep blue
+   band, gold for emphasis, EB Garamond throughout. Radius 2px.
+   No shadows, no gradients. Palette is the contrast-corrected one
+   of 14 August 2026 (gold-dark #7D5F27 on paper only, gold #C09A45
+   on the band only). */
+:root{
+  --font-display:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-ar:'Noto Naskh Arabic', 'EB Garamond', Georgia, serif;
+  --font-label:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --paper:#FAF5EA; --paper-2:#EFE4CE; --card:#FFFBF2;
+  --line:#E2D5BB; --line-2:#D3C0A0;
+  --ink:#4A3728; --ink-2:#6B5B47; --ink-3:#6F5D4A;
+  --band:#152A55; --band-line:#2E4477; --royal:#1E3A78;
+  --on-band:#F3EADA; --on-band-muted:#9AAAD0; --on-band-link:#D3DCEF;
+  --gold:#C09A45; --gold-dark:#7D5F27;
+
+  --navy:#152A55; --navy-deep:#1E3A78;
+  --accent:#1E3A78; --accent-soft:#EFE4CE; --accent-line:#D3C0A0;
+  --gold-soft:#EFE4CE; --gold-line:#E2D5BB; --gold-bright:#C09A45;
+  --good:#3F6B4F; --good-soft:#EAEFE3; --good-line:#C9D6C2;
+  --warn:#7D5F27; --warn-soft:#F5ECDA; --warn-line:#E2D5BB;
+  --bad:#8C3A30; --bad-soft:#F4E7E1; --bad-line:#E2CBC1;
+  --radius:2px; --radius-sm:2px; --shadow:none; --shadow-lift:none;
+
+  --mc-paper:#FAF5EA; --mc-band:#EFE4CE; --mc-card:#FFFBF2;
+  --mc-ink:#4A3728; --mc-ink-2:#6B5B47; --mc-ink-3:#6F5D4A; --mc-muted:#6F5D4A;
+  --mc-rule:#E2D5BB; --mc-border:#D3C0A0;
+  --mc-accent:#1E3A78; --mc-accent-dim:#C09A45;
+  --mc-on-dark:#F3EADA; --mc-on-dark-2:#9AAAD0; --mc-dark-rule:#2E4477;
+  --mc-serif:'EB Garamond', Georgia, serif;
+
+  --deep:#152A55;          /* the one dark panel colour is the band blue */
+  --muted:#6F5D4A; --sec:#6B5B47; --body:#4A3728;
+}
+body{background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:19px; line-height:1.7;}
+[dir="rtl"] body{font-family:var(--font-ar); line-height:1.9;}
+.wrap{max-width:1000px;}
+.wrap, .wrap *, .mc-nav *:not(.lang-toggle){border-radius:2px !important;}
+h1, h2, h3, .serif{font-family:var(--font-display); font-weight:400; letter-spacing:0; color:var(--band);}
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] .serif{font-family:var(--font-ar); font-weight:600;}
+a{color:var(--accent);}
+::selection{background:var(--paper-2); color:var(--band);}
+:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--gold-dark); outline-offset:2px;}
+
+/* ---- labels: IBM Plex Mono, uppercase, like the main site ---- */
+.kicker, .eyebrow, .ctrow h3, .fgroup h3, .controls h2, .tag, .evtag, .orows dt, .sread dt,
+.ml, .wl, .ometa, .needbox b, .sec h3, .lbl, th, .mc-brand span, .mc-site, .mc-book,
+.section-chip, .subj, .count{font-family:var(--font-label);}
+[dir="rtl"] .kicker, [dir="rtl"] .ctrow h3, [dir="rtl"] .fgroup h3, [dir="rtl"] .tag, [dir="rtl"] .evtag,
+[dir="rtl"] .orows dt, [dir="rtl"] .sread dt, [dir="rtl"] .ml, [dir="rtl"] .ometa, [dir="rtl"] .needbox b,
+[dir="rtl"] .mc-site, [dir="rtl"] .mc-book, [dir="rtl"] .count{font-family:var(--font-ar);}
+
+/* ---- masthead: the blue band ---- */
+.mc-nav{background:var(--band); color:var(--on-band); border-bottom:1px solid var(--band-line);}
+.mc-brand{color:var(--on-band);}
+.mc-brand b{font-family:var(--font-display); font-weight:600; font-size:21px; letter-spacing:0; color:var(--on-band);}
+[dir="rtl"] .mc-brand b{font-family:var(--font-ar);}
+.mc-brand span{font-size:10.5px; letter-spacing:.12em; color:var(--gold);}
+.mc-nav-inner{gap:20px;}
+.mc-nav-links{font-family:var(--font-body); font-size:15.5px; letter-spacing:0; gap:18px; flex:0 1 auto;}
+.mc-brand{gap:12px; flex:0 0 auto;}
+@media (max-width:1200px){ .mc-brand span{display:none;} }
+.mc-nav-links a{color:var(--on-band-link); border-bottom:1px solid transparent;}
+.mc-nav-links a:hover{color:var(--on-band);}
+.mc-nav-links a[aria-current="page"]{color:var(--gold); border-bottom-color:var(--gold);}
+.mc-nav-right{gap:11px; flex:0 0 auto;}
+.mc-site{font-size:12px; color:var(--on-band-muted);}
+.mc-site:hover{color:var(--on-band); border-bottom-color:var(--band-line);}
+.mc-book{font-size:12px; padding:6px 12px; color:var(--gold); border:1px solid var(--gold); border-radius:2px !important;}
+.mc-book:hover{background:var(--gold); color:var(--band); border-color:var(--gold);}
+@media (max-width:1080px){ .mc-site{display:none;} }
+.mc-nav .lang-toggle{background:var(--gold); border:1px solid var(--gold); color:var(--band);
+  border-radius:2px !important; font-family:var(--font-label); font-weight:600; letter-spacing:.06em; padding:6px 14px;}
+.mc-nav .lang-toggle:hover{background:var(--on-band); border-color:var(--on-band); color:var(--band);}
+
+/* ---- hero ---- */
+.hero{text-align:start; padding:60px 0 30px; border-bottom:1px solid var(--line);}
+.kicker{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-dark); font-weight:500;}
+[dir="rtl"] .kicker{letter-spacing:0; font-size:15px;}
+.hero h1{font-family:var(--font-display); font-weight:400; font-size:72px; line-height:1.04;
+  letter-spacing:0; color:var(--band); margin-top:18px; max-width:16ch;}
+[dir="rtl"] .hero h1{font-family:var(--font-ar); font-weight:600; font-size:58px; line-height:1.3; max-width:none;}
+.hero p.sub{font-size:22px; line-height:1.6; color:var(--ink-2); max-width:640px; margin:22px 0 0;}
+
+/* ---- the season callout: gold spine ---- */
+.keybox{background:var(--card); border:1px solid var(--line); border-inline-start:4px solid var(--gold);
+  padding:30px 34px; margin:36px 0 0;}
+.keybox h2{font-size:31px; line-height:1.3; color:var(--band);}
+[dir="rtl"] .keybox h2{font-size:28px;}
+.keybox p{font-size:19px; line-height:1.75; color:var(--ink); margin-top:12px;}
+
+/* ---- quiz matcher: the one dark slab, band blue ---- */
+.matcher{background:var(--band); padding:38px 34px; margin-top:34px; border:1px solid var(--band-line);}
+.matcher h2{font-size:31px; color:var(--on-band); line-height:1.3;}
+[dir="rtl"] .matcher h2{font-size:28px;}
+.matcher p{color:var(--on-band-link); font-size:18px; margin-top:11px;}
+.matcher a{color:var(--gold);}
+#matcher .chip, .matcher .chip{background:transparent; color:var(--on-band) !important;
+  border-color:var(--band-line) !important;}
+#matcher .chip:hover, .matcher .chip:hover{border-color:var(--gold) !important; color:var(--on-band) !important;}
+#matcher .chip.on, .matcher .chip.on{background:var(--gold) !important; color:var(--band) !important;
+  border-color:var(--gold) !important;}
+.matcher .hint{color:var(--on-band-muted); font-size:15px;}
+
+/* ---- filters ---- */
+.ctrow h3, .fgroup h3{font-size:11px; letter-spacing:.18em; color:var(--gold-dark); font-weight:500;}
+[dir="rtl"] .ctrow h3, [dir="rtl"] .fgroup h3{letter-spacing:0; font-size:15px;}
+.chip{background:transparent; border-color:var(--line-2); color:var(--ink); font-size:16px; font-family:var(--font-body);}
+[dir="rtl"] .chip{font-family:var(--font-ar);}
+.chip:hover{border-color:var(--band); color:var(--band);}
+.chip.on{background:var(--band); border-color:var(--band); color:var(--on-band);}
+.count{font-size:13px; color:var(--ink-3); border-top:1px solid var(--line); padding-top:16px; letter-spacing:.04em;}
+
+/* ---- listings as ledger blocks ---- */
+#list{border-top:2px solid var(--band);}
+.opp{background:var(--card); border:1px solid var(--line); border-top:0; padding:26px 30px;}
+.opp:first-child{border-top:1px solid var(--line);}
+.oorg{font-family:var(--font-display); font-weight:500; font-size:26px; color:var(--band); line-height:1.25;}
+[dir="rtl"] .oorg{font-family:var(--font-ar); font-weight:600; font-size:23px;}
+.oprog{font-size:17px; color:var(--ink-2);}
+.tag{font-size:10.5px; letter-spacing:.14em; border-color:var(--line-2); color:var(--ink-3); background:transparent;}
+[dir="rtl"] .tag{letter-spacing:0; font-size:13px;}
+.tag.open{background:var(--band); border-color:var(--band); color:var(--on-band);}
+.tag.pay{color:var(--good); border-color:var(--good-line); background:var(--good-soft);}
+.tag.done{color:var(--bad); border-color:var(--bad-line); background:var(--bad-soft);}
+.g-open{color:var(--good); border-color:var(--good-line); background:var(--good-soft);}
+.g-res, .g-gcc{color:var(--gold-dark); border-color:var(--line-2); background:var(--paper-2);}
+.g-nat{color:var(--bad); border-color:var(--bad-line); background:var(--bad-soft);}
+.orows{margin-top:18px; grid-template-columns:170px 1fr; gap:0 22px; border-top:1px solid var(--line);}
+.orows dt{font-size:11px; letter-spacing:.14em; color:var(--gold-dark); padding:13px 0; border-bottom:1px solid var(--line);}
+[dir="rtl"] .orows dt{letter-spacing:0; font-size:14px;}
+.orows dd{font-size:18px; line-height:1.65; color:var(--ink); padding:13px 0; border-bottom:1px solid var(--line);}
+.olink{font-size:17px; color:var(--accent); border-bottom:1px solid var(--accent-line);}
+.olink:hover{border-bottom-color:var(--accent);}
+.ometa{font-size:12px; color:var(--ink-3); letter-spacing:.04em;}
+.ml, .wl{color:var(--gold-dark); font-weight:500;}
+
+/* ---- sector read ---- */
+.sread{background:var(--paper-2); border:0; border-inline-start:4px solid var(--gold); padding:26px 30px;}
+.sread h3{font-size:23px; color:var(--band);}
+.sread dt{font-size:11px; letter-spacing:.14em; color:var(--gold-dark);}
+[dir="rtl"] .sread dt{letter-spacing:0; font-size:14px;}
+.sread dd{font-size:18px; color:var(--ink);}
+
+/* ---- evidence ---- */
+.srcbox{background:var(--card); border:1px solid var(--line);}
+.srcbox h2{font-size:34px; color:var(--band); line-height:1.2;}
+[dir="rtl"] .srcbox h2{font-size:30px;}
+#evlist{border-top:2px solid var(--band);}
+.ev{border-top:1px solid var(--line); padding:26px 0;}
+.ev:first-of-type{border-top:0;}
+.evtag{font-size:10.5px; letter-spacing:.14em; border-color:var(--line-2); color:var(--ink-3); background:transparent;}
+[dir="rtl"] .evtag{letter-spacing:0; font-size:13px;}
+.evtag.causal{background:var(--band); border-color:var(--band); color:var(--on-band);}
+.evtag.contested, .evtag.gap{background:transparent; border-color:var(--gold-dark); color:var(--gold-dark);}
+.evclaim{font-family:var(--font-display); font-weight:500; font-size:25px; line-height:1.4; color:var(--band);}
+[dir="rtl"] .evclaim{font-family:var(--font-ar); font-weight:600; font-size:21px; line-height:1.7;}
+.evsrc{font-size:15px; color:var(--ink-2);}
+.evnote{background:var(--paper-2); font-size:17px; line-height:1.7; padding:16px 20px; color:var(--ink);
+  border-inline-start:3px solid var(--line-2);}
+.evlink{color:var(--accent); border-bottom-color:var(--accent-line);}
+
+/* ---- employer call to action: band blue ---- */
+.subbox{background:var(--band); padding:42px 36px; border:1px solid var(--band-line);}
+.subbox h2{font-size:31px; color:var(--on-band);}
+[dir="rtl"] .subbox h2{font-size:28px;}
+.subbox p{color:var(--on-band-link); font-size:18px;}
+.subbox a{color:var(--gold);}
+.subbox .btn{background:var(--gold); color:var(--band); border-color:var(--gold); font-size:17px; font-weight:600;}
+.subbox .btn:hover{background:var(--on-band); border-color:var(--on-band); color:var(--band);}
+
+/* ---- across to Major Compass ---- */
+.mcbox{border-top:2px solid var(--band); padding-top:34px;}
+.mcbox h2{font-size:28px; color:var(--band);}
+[dir="rtl"] .mcbox h2{font-size:25px;}
+.mccard{border-color:var(--line); background:var(--card); padding:24px;}
+.mccard:hover{border-color:var(--gold);}
+.mccard b{font-family:var(--font-display); font-weight:500; font-size:20px; color:var(--band);}
+[dir="rtl"] .mccard b{font-family:var(--font-ar); font-weight:600;}
+.mccard span{font-size:16px; color:var(--ink-2);}
+
+/* ---- buttons ---- */
+.btn{background:var(--band); border:1px solid var(--band); color:var(--on-band); font-family:var(--font-body); font-weight:500;}
+.btn:hover{background:var(--royal); border-color:var(--royal); color:var(--on-band);}
+.btn.ghost, .btn.secondary{background:transparent; color:var(--band); border:1px solid var(--band);}
+.btn.ghost:hover, .btn.secondary:hover{background:var(--band); color:var(--on-band);}
+.btn.apply{background:var(--band); color:var(--on-band); border:1px solid var(--band); font-family:var(--font-body);}
+.btn.apply:hover{background:var(--royal); border-color:var(--royal); color:var(--on-band);}
+.btn.apply.mail{background:transparent; color:var(--band); border-color:var(--band);}
+.btn.apply.mail:hover{background:var(--band); color:var(--on-band);}
+.needbox{background:var(--paper-2); border-inline-start:3px solid var(--gold);}
+.needbox b{color:var(--gold-dark); font-weight:500; letter-spacing:.14em;}
+.needbox p{color:var(--ink);}
+.cvlink{color:var(--ink-2); border-bottom:1px dotted var(--line-2);}
+.cvlink:hover{color:var(--accent); border-bottom-color:var(--accent);}
+
+/* ---- gigs board pieces ---- */
+.how{background:var(--card); border-block:1px solid var(--line);}
+.how h2, .cta h2, .found h3, .crossbox h2, .oh b{color:var(--band);}
+.step b{font-family:var(--font-display); color:var(--gold-dark); font-weight:400;}
+.step p, .cta p, .found p, .opp p.desc{color:var(--ink);}
+.cta{background:var(--card); border:1px solid var(--line);}
+.cta.dark{background:var(--band); border-color:var(--band-line);}
+.cta.dark h2{color:var(--on-band);}
+.cta.dark p{color:var(--on-band-link);}
+.cta.dark .btn.apply{background:var(--gold); color:var(--band); border-color:var(--gold);}
+.cta.dark .btn.apply:hover{background:var(--on-band); border-color:var(--on-band); color:var(--band);}
+.cta.dark .orline{color:var(--on-band-muted);}
+.cta.dark .orline a{color:var(--gold);}
+.orline a{color:var(--accent);}
+.found{background:var(--paper-2); border-inline-start:4px solid var(--gold);}
+.ctrl{border-top:2px solid var(--band);}
+.crosscard{background:var(--paper); border-color:var(--line);}
+.crosscard:hover{border-color:var(--gold);}
+.crosscard b{color:var(--band);}
+.crosscard span{color:var(--ink-2);}
+
+footer.site{border-top:1px solid var(--line); margin-top:44px; color:var(--ink-3);}
+footer.site a{color:var(--accent);}
+
+@media (max-width:760px){
+  body{font-size:18px;}
+  .hero{padding:40px 0 24px;}
+  .hero h1{font-size:44px; line-height:1.1; max-width:none;}
+  [dir="rtl"] .hero h1{font-size:38px;}
+  .hero p.sub{font-size:19px;}
+  .keybox{padding:24px 22px;}
+  .keybox h2{font-size:25px;}
+  .matcher{padding:26px 22px;}
+  .matcher h2{font-size:25px;}
+  .opp{padding:22px 20px;}
+  .oorg{font-size:22px;}
+  .orows{grid-template-columns:1fr; gap:0;}
+  .orows dt{border-bottom:0; padding:14px 0 0;}
+  .orows dd{padding:4px 0 14px;}
+  .evclaim{font-size:21px;}
+  .srcbox h2{font-size:28px;}
+  .subbox{padding:30px 22px;}
+  .sread{padding:22px 20px;}
+  .mc-nav .lang-toggle{border-radius:2px !important;}
+  .mc-brand b{font-size:18px;}
+}
+</style>
 </head>
 <body>
 <div class="mc-nav">
@@ -711,8 +790,8 @@ html, body{overflow-x:hidden;}
       <a href="https://saqeralkhalifa.github.io/major-compass/" data-en="Major Compass" data-ar="بوصلة التخصص">Major Compass</a>
     </nav>
     <div class="mc-nav-right">
-      <a class="mc-site" href="https://saqeralkhalifa.com/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي">saqeralkhalifa.com</a>
-      <a class="mc-book" href="https://saqeralkhalifa.com/#stores" data-en="The books" data-ar="الكتب">The books</a>
+      <a class="mc-site" href="https://saqeralkhalifa.com/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي" data-href-en="https://saqeralkhalifa.com/" data-href-ar="https://saqeralkhalifa.com/arabic/">saqeralkhalifa.com</a>
+      <a class="mc-book" href="https://saqeralkhalifa.com/#stores" data-en="The books" data-ar="الكتب" data-href-en="https://saqeralkhalifa.com/#stores" data-href-ar="https://saqeralkhalifa.com/arabic/#buy">The books</a>
       <button class="lang-toggle" id="langToggle">عربي</button>
     </div>
   </div>
@@ -1759,7 +1838,8 @@ if(GRP){ try{ document.getElementById("matcher").scrollIntoView({block:"start"})
   function sync(){
     var l = document.documentElement.lang === "ar" ? "ar" : "en";
     var n = document.querySelectorAll("[data-en]");
-    for(var i=0;i<n.length;i++){ n[i].textContent = n[i].getAttribute("data-"+l); }
+    for(var i=0;i<n.length;i++){ n[i].textContent = n[i].getAttribute("data-"+l);
+      var h = n[i].getAttribute("data-href-"+l); if(h) n[i].setAttribute("href", h); }
   }
   try{ new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]}); }catch(e){}
   document.addEventListener("click", function(e){ if(e.target && e.target.id === "langToggle") setTimeout(sync, 0); }, true);
@@ -1776,6 +1856,24 @@ if(GRP){ try{ document.getElementById("matcher").scrollIntoView({block:"start"})
       setTimeout(function(){ mcSaveLang(document.documentElement.lang === "ar" ? "ar" : "en"); }, 0);
     }
   }, true);
+})();
+</script>
+<script>
+/* MCXL: cross-property links carry the current language, because localStorage does not cross origins. */
+(function(){
+  var HOSTS = ["gigs.saqeralkhalifa.com","internships.saqeralkhalifa.com","saqeralkhalifa.github.io"];
+  function cur(){ return document.documentElement.lang === "ar" ? "ar" : "en"; }
+  function fix(a){
+    try{
+      var u = new URL(a.getAttribute("href"), location.href);
+      if(u.host === location.host || HOSTS.indexOf(u.host) < 0) return;
+      u.searchParams.set("lang", cur()); a.href = u.href;
+    }catch(e){}
+  }
+  function all(){ var n = document.querySelectorAll("a[href]"); for(var i=0;i<n.length;i++) fix(n[i]); }
+  try{ new MutationObserver(all).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]}); }catch(e){}
+  document.addEventListener("click", function(e){ var a = e.target && e.target.closest && e.target.closest("a[href]"); if(a) fix(a); }, true);
+  window.addEventListener("load", all); all();
 })();
 </script>
 </body>
