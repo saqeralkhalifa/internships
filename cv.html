@@ -5,19 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Build a CV | Internship Opportunities</title>
 <meta name="description" content="A free CV builder for Gulf students with no experience yet. Fill the boxes, get a clean one page CV you can save as PDF and attach to an internship application. Arabic and English.">
-<script>
-/* This site is now the root of its own subdomain, so GoatCounter would log
-   every visit as "/". Keep the old prefix so the history stays continuous,
-   and strip the query string so ?lang= does not split one page into many. */
-window.goatcounter = {path: function(p){
-  p = p.replace(/[?#].*$/, "");
-  return "/internships" + (p === "/" ? "" : p);
-}};
-</script>
 <script data-goatcounter="https://majorcompass.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
 function mcInitLang(){
   try{
@@ -35,14 +26,13 @@ function mcSaveLang(v){ try{ localStorage.setItem("mc-lang", v); }catch(e){} }
 <style>
 *{margin:0;padding:0;box-sizing:border-box;border-radius:0;}
 :root{
-  --paper:#FAF5EA; --paper-2:#EFE4CE; --card:#F5ECDA;
-  --line:#E2D5BB; --line-2:#D3C0A0;
-  --ink:#152A55; --ink-2:#4A3728; --ink-3:#6B5B47;
-  --accent:#7D5F27; --deep:#152A55;
-  --serif:'EB Garamond', Georgia, serif;
-  --label:'IBM Plex Mono', 'Noto Naskh Arabic', ui-monospace, monospace;
-  --sans:'EB Garamond', Georgia, 'Times New Roman', serif;
-  --ar:'Noto Naskh Arabic', 'Amiri', Georgia, serif;
+  --paper:#faf8f4; --paper-2:#f2eee7; --card:#ffffff;
+  --line:#e2ddd3; --line-2:#c9c2b5;
+  --ink:#1a1712; --ink-2:#3c372f; --ink-3:#6f6a60;
+  --accent:#8c2f28; --deep:#1c3630;
+  --serif:'Playfair Display', Georgia, serif;
+  --sans:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --ar:'IBM Plex Sans Arabic','IBM Plex Sans', sans-serif;
 }
 body{background:var(--paper); color:var(--ink-2); font-family:var(--sans);
   font-size:19px; line-height:1.75; overflow-x:hidden;}
@@ -50,22 +40,22 @@ body{background:var(--paper); color:var(--ink-2); font-family:var(--sans);
 .wrap{max-width:900px; margin:0 auto; padding:0 22px 90px;}
 
 /* nav */
-.nav{background:#152A55; padding:12px 0;}
+.nav{background:#1a1712; padding:12px 0;}
 .nav-in{max-width:1160px; margin:0 auto; padding:0 22px; display:flex; align-items:center;
   justify-content:space-between; gap:16px; flex-wrap:wrap;}
-.nav a.brand{font-family:var(--serif); font-weight:600; font-size:19px; color:#F3EADA; text-decoration:none;}
+.nav a.brand{font-family:var(--serif); font-weight:600; font-size:19px; color:#f7f4ee; text-decoration:none;}
 [dir="rtl"] .nav a.brand{font-family:var(--ar);}
 .nav .right{display:flex; gap:10px; align-items:center;}
-.nav .right a{color:#D3DCEF; font-size:13px; text-decoration:none;}
+.nav .right a{color:#cfc9bd; font-size:13px; text-decoration:none;}
 .nav .right a:hover{color:#fff;}
-.lang{background:transparent; border:1px solid #2E4477; color:#F3EADA; padding:5px 13px;
+.lang{background:transparent; border:1px solid #4a443b; color:#e8e3d9; padding:5px 13px;
   font-size:12px; font-weight:600; letter-spacing:.06em; cursor:pointer; font-family:inherit;}
 .lang:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
 
 h1{font-family:var(--serif); font-weight:600; font-size:60px; line-height:1.08; color:var(--ink);
   margin-top:20px; letter-spacing:-.015em;}
 [dir="rtl"] h1{font-family:var(--ar); font-size:48px; line-height:1.32;}
-.kicker{font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); font-weight:600; font-family:var(--label);}
+.kicker{font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); font-weight:600;}
 [dir="rtl"] .kicker{letter-spacing:.04em; font-size:15px;}
 .hero{padding:56px 0 28px; border-bottom:1px solid var(--line);}
 .lede{font-size:20px; line-height:1.7; color:var(--ink-2); margin-top:22px; max-width:660px;}
@@ -83,7 +73,7 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
 
 .f{margin-top:18px;}
 .f label{display:block; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-3); font-weight:600; margin-bottom:7px; font-family:var(--label);}
+  color:var(--ink-3); font-weight:600; margin-bottom:7px;}
 [dir="rtl"] .f label{letter-spacing:.02em; font-size:14px;}
 .f input, .f textarea{width:100%; font-family:inherit; font-size:18px; line-height:1.65;
   padding:13px 15px; border:1px solid var(--line-2); background:var(--card); color:var(--ink);
@@ -94,7 +84,7 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
 
 .entry{border:1px solid var(--line); background:var(--card); padding:20px; margin-top:16px;}
 .entry .top{display:flex; justify-content:space-between; align-items:center; gap:12px;}
-.entry .top b{font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); font-family:var(--label);}
+.entry .top b{font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);}
 [dir="rtl"] .entry .top b{letter-spacing:.02em; font-size:15px;}
 .rm{background:none; border:0; color:var(--accent); font-family:inherit; font-size:15px;
   cursor:pointer; text-decoration:underline; padding:6px; min-height:38px;}
@@ -106,7 +96,7 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
 .btn{background:var(--accent); color:#fff; border:1px solid var(--accent); padding:15px 28px;
   font-family:inherit; font-size:17px; font-weight:600; cursor:pointer; text-decoration:none;
   min-height:52px; display:inline-flex; align-items:center; justify-content:center;}
-.btn:hover{background:#1E3A78; border-color:#1E3A78;}
+.btn:hover{background:#a8382f; border-color:#a8382f;}
 .btn.ghost{background:transparent; color:var(--accent);}
 .btn.ghost:hover{background:var(--accent); color:#fff;}
 .saved{font-size:15px; color:var(--ink-3); margin-top:12px;}
@@ -114,21 +104,21 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
 /* the rendered CV */
 #out{display:none; margin-top:40px;}
 #out.on{display:block;}
-.cv{background:#fff; border:1px solid var(--line); padding:52px 56px; color:#152A55;}
-.cv h3{font-family:var(--serif); font-weight:700; font-size:36px; line-height:1.15; color:#152A55;}
+.cv{background:#fff; border:1px solid var(--line); padding:52px 56px; color:#16130f;}
+.cv h3{font-family:var(--serif); font-weight:700; font-size:36px; line-height:1.15; color:#16130f;}
 [dir="rtl"] .cv h3{font-family:var(--ar); font-size:32px;}
-.cv .contact{font-size:16px; color:#4A3728; margin-top:10px; line-height:1.7;}
-.cv .rule{height:2px; background:#152A55; margin:22px 0 0;}
-.cv h4{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#7D5F27;
-  font-weight:700; margin-top:26px; padding-bottom:7px; border-bottom:1px solid #ddd8ce; font-family:var(--label);}
+.cv .contact{font-size:16px; color:#4a453c; margin-top:10px; line-height:1.7;}
+.cv .rule{height:2px; background:#16130f; margin:22px 0 0;}
+.cv h4{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#8c2f28;
+  font-weight:700; margin-top:26px; padding-bottom:7px; border-bottom:1px solid #ddd8ce;}
 [dir="rtl"] .cv h4{letter-spacing:.03em; font-size:15px;}
 .cv .item{margin-top:14px;}
 .cv .item .l1{display:flex; justify-content:space-between; gap:16px; align-items:baseline;}
-.cv .item .t{font-weight:600; font-size:18px; color:#152A55;}
-.cv .item .d{font-size:15px; color:#6B5B47; white-space:nowrap;}
-.cv .item .s{font-size:16px; color:#4A3728;}
-.cv .item p{font-size:16px; line-height:1.7; color:#4A3728; margin-top:5px; white-space:pre-line;}
-.cv .plain{font-size:16px; line-height:1.8; color:#4A3728; margin-top:12px; white-space:pre-line;}
+.cv .item .t{font-weight:600; font-size:18px; color:#16130f;}
+.cv .item .d{font-size:15px; color:#6f6a60; white-space:nowrap;}
+.cv .item .s{font-size:16px; color:#4a453c;}
+.cv .item p{font-size:16px; line-height:1.7; color:#3c372f; margin-top:5px; white-space:pre-line;}
+.cv .plain{font-size:16px; line-height:1.8; color:#3c372f; margin-top:12px; white-space:pre-line;}
 
 @media (max-width:760px){
   body{font-size:18px;}
@@ -159,38 +149,6 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
   @page{margin:16mm;}
 }
 </style>
-<style>/* Majlis */
-
-/* ---- Theme 2a label face -------------------------------------------
-   Mono caps for the things that were already labels. Latin lands on
-   IBM Plex Mono, Arabic falls through to Naskh, so one token covers both. */
-:root{ --font-label:'IBM Plex Mono', 'Noto Naskh Arabic', ui-monospace, SFMono-Regular, monospace; }
-.kicker,.tag,.evtag,.orows dt,.sread dt,.ctrow h3,.fgroup h3,.needbox b,.ometa,
-.count,.btn,.btn.apply,.mc-nav-links,.mc-brand span{ font-family:var(--font-label); }
-.btn,.btn.apply{ text-transform:uppercase; letter-spacing:.1em; font-size:14px; font-family:var(--label);}
-.btn.apply{ font-weight:500; }
-
-/* Headlines in the serif, in the band blue, both scripts. */
-.hero h1,.keybox h2,.srcbox h2,.mcbox h2,.oorg,.evclaim,.sread h3{ font-family:var(--font-display); }
-[dir="rtl"] .hero h1,[dir="rtl"] .keybox h2,[dir="rtl"] .srcbox h2,[dir="rtl"] .mcbox h2,
-[dir="rtl"] .oorg,[dir="rtl"] .evclaim,[dir="rtl"] .sread h3{ font-family:var(--font-ar); }
-
-/* Never track Arabic, never uppercase it. */
-[dir="rtl"] *{ letter-spacing:0 !important; }
-[dir="rtl"] .kicker,[dir="rtl"] .tag,[dir="rtl"] .evtag,[dir="rtl"] .orows dt,
-[dir="rtl"] .sread dt,[dir="rtl"] .needbox b,[dir="rtl"] .btn,
-[dir="rtl"] .ctrow h3,[dir="rtl"] .fgroup h3{ text-transform:none; }
-
-/* Gold at full strength only on blue. */
-.matcher .chip.on,#matcher .chip.on{ background:#C09A45 !important; color:#152A55 !important;
-  border-color:#C09A45 !important; }
-.tag.open{ background:#7D5F27; border-color:#7D5F27; color:#FAF5EA; }
-.evtag.causal{ background:#7D5F27; border-color:#7D5F27; color:#FAF5EA; }
-.subbox .btn{ background:#C09A45; color:#152A55; border-color:#C09A45; }
-.subbox .btn:hover{ background:#D9B863; border-color:#D9B863; color:#152A55; }
-*{ text-shadow:none; }
-:focus-visible{ outline:2px solid #C09A45; outline-offset:2px; }
-</style>
 </head>
 <body>
 <div class="nav">
@@ -198,7 +156,7 @@ section.blk .hint{font-size:16px; color:var(--ink-3); margin-top:6px; line-heigh
     <a class="brand" href="./" data-en="Internship Opportunities" data-ar="فرص التدريب">Internship Opportunities</a>
     <div class="right">
       <a href="./" data-en="Back to internships" data-ar="عودة إلى الفرص">Back to internships</a>
-      <a href="https://saqeralkhalifa.com/" data-href-en="https://saqeralkhalifa.com/" data-href-ar="https://saqeralkhalifa.com/arabic/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي">saqeralkhalifa.com</a>
+      <a href="https://saqeralkhalifa.com/" data-en="saqeralkhalifa.com" data-ar="الموقع الرئيسي">saqeralkhalifa.com</a>
       <button class="lang" id="langToggle">عربي</button>
     </div>
   </div>
@@ -264,7 +222,7 @@ var LANG = "en";
 var T = {
 en:{
   kicker:"Free CV builder",
-  h1:"Build a CV in five minutes",
+  h1:"Build a CV",
   lede:"Most students applying for a first internship have no CV, and freeze at the blank page. Fill these boxes and you will get a clean one page CV you can save as a PDF and attach.",
   nb:"You have more to put on it than you think.",
   np:"You do not need work experience. School and university projects, volunteering, a part time job, a club you ran, a language you speak, a course you finished. Employers hiring interns expect a short CV. One page is correct, two is too many.",
@@ -273,13 +231,13 @@ en:{
   lAbout:"One short paragraph about you",
   aboutPH:"Two or three lines. What you study, what you are looking for, and one thing you are genuinely good at. Write it plainly, no slogans.",
   s2:"Education", s2h:"Start with the most recent. If you are still studying, say so and give your expected year.",
-  s3:"Experience and activities", s3h:"Anything counts here. A summer job, volunteering, a university project, a club, a competition. Say what you actually did, not what the group did.",
+  s3:"Experience and activities", s3h:"Anything counts here. A summer job, volunteering, a university project, a club, a competition. Describe your own part in the work, rather than the group's.",
   s4:"Skills and languages", s4h:"Be honest. Anything you list here can be tested in an interview.",
   lSkills:"Skills", skillsPH:"For example: Excel, data entry, customer service, Canva, basic Python, cash handling. One line each or separated by commas.",
   lLangs:"Languages", langsPH:"For example: Arabic native, English fluent, French basic",
   lExtra:"Anything else worth knowing", extraPH:"Awards, certificates, a driving licence, availability dates. Leave blank if there is nothing.",
   eInst:"School or university", eQual:"What you are studying or studied", eDates:"Years", eNote:"Grade or anything worth noting",
-  xOrg:"Where", xRole:"What you were", xDates:"When", xNote:"What you actually did",
+  xOrg:"Where", xRole:"What you were", xDates:"When", xNote:"What you did",
   addEdu:"Add another school or university", addExp:"Add another experience",
   remove:"Remove",
   build:"Build my CV", print:"Save as PDF", copy:"Copy as text",
@@ -290,14 +248,14 @@ en:{
 },
 ar:{
   kicker:"صانع السيرة الذاتية، مجانًا",
-  h1:"اصنع سيرتك الذاتية في خمس دقائق",
+  h1:"اصنع سيرتك الذاتية",
   lede:"أغلب الطلبة المتقدمين لأول تدريب ليس لديهم سيرة ذاتية، ويتجمدون أمام الصفحة الفارغة. املأ هذه الحقول وستحصل على سيرة ذاتية نظيفة من صفحة واحدة، تحفظها ملف PDF وترفقها بطلبك.",
   nb:"لديك ما تكتبه أكثر مما تظن.",
   np:"لا تحتاج خبرة عمل. مشاريع المدرسة والجامعة، والعمل التطوعي، ووظيفة بدوام جزئي، ونادٍ أدرته، ولغة تتحدثها، ودورة أتممتها. فمن يوظّف متدربين يتوقع سيرة قصيرة. صفحة واحدة هي الصواب، وصفحتان كثير.",
   s1:"عنك", s1h:"اكتب اسمك كما هو في البطاقة الذكية تمامًا، فهذا ما سيقارنونه به.",
   lName:"الاسم الكامل", lPhone:"رقم الهاتف", lEmail:"البريد الإلكتروني", lCity:"مكان السكن",
   lAbout:"فقرة قصيرة عنك",
-  aboutPH:"سطران أو ثلاثة. ماذا تدرس، وما الذي تبحث عنه، وشيء واحد تجيده فعلًا. اكتبها ببساطة وبلا شعارات.",
+  aboutPH:"سطران أو ثلاثة. ماذا تدرس، وما الذي تبحث عنه، وشيء واحد تجيده. اكتبها ببساطة وبلا شعارات.",
   s2:"التعليم", s2h:"ابدأ بالأحدث. وإن كنت ما تزال تدرس فاذكر ذلك مع سنة التخرج المتوقعة.",
   s3:"الخبرات والأنشطة", s3h:"كل شيء يُحتسب هنا. عمل صيفي، أو تطوع، أو مشروع جامعي، أو نادٍ، أو مسابقة. اذكر ما فعلته أنت، لا ما فعلته المجموعة.",
   s4:"المهارات واللغات", s4h:"كن صادقًا. فكل ما تذكره هنا قد يُختبر في المقابلة.",
@@ -305,7 +263,7 @@ ar:{
   lLangs:"اللغات", langsPH:"مثال: العربية لغة أم، الإنجليزية بطلاقة، الفرنسية أساسيات",
   lExtra:"أي شيء آخر يستحق الذكر", extraPH:"جوائز، أو شهادات، أو رخصة قيادة، أو تواريخ تفرغك. اتركه فارغًا إن لم يوجد.",
   eInst:"المدرسة أو الجامعة", eQual:"ما تدرسه أو درسته", eDates:"السنوات", eNote:"المعدل أو ما يستحق الذكر",
-  xOrg:"أين", xRole:"ماذا كنت", xDates:"متى", xNote:"ما الذي فعلته فعلًا",
+  xOrg:"أين", xRole:"ماذا كنت", xDates:"متى", xNote:"ما الذي فعلته",
   addEdu:"أضف مدرسة أو جامعة أخرى", addExp:"أضف خبرة أخرى",
   remove:"احذف",
   build:"اصنع سيرتي الذاتية", print:"احفظها ملف PDF", copy:"انسخها نصًا",
@@ -369,11 +327,6 @@ function chrome(){
   $("saved").textContent = t.saved;
   var n = document.querySelectorAll("[data-en]");
   for(var i=0;i<n.length;i++){ n[i].textContent = n[i].getAttribute("data-"+LANG); }
-  var h = document.querySelectorAll("[data-href-en]");
-  for(var j=0;j<h.length;j++){
-    var v = h[j].getAttribute("data-href-"+LANG);
-    if(v) h[j].setAttribute("href", v);
-  }
 }
 
 function collect(){
@@ -495,39 +448,7 @@ $("langToggle").addEventListener("click", function(){
 
 load();
 chrome();
-/* MCLANG v2, same rules as the rest of the ecosystem: apply the resolved
-   language, persist it, and stamp every internal link on the way out so the
-   choice survives the jump back to a different origin. */
-(function(){
-  var HOSTS = ["saqeralkhalifa.github.io", "internships.saqeralkhalifa.com",
-               "saqeralkhalifa.com", "www.saqeralkhalifa.com"];
-  function cur(){ return document.documentElement.lang === "ar" ? "ar" : "en"; }
-  function stamp(a){
-    try{
-      var raw = a.getAttribute("href");
-      if(!raw || raw.charAt(0) === "#") return;
-      var u = new URL(raw, location.href);
-      if(u.protocol !== "http:" && u.protocol !== "https:") return;
-      if(HOSTS.indexOf(u.hostname) === -1) return;
-      if(u.searchParams.has("lang")) return;
-      u.searchParams.set("lang", cur());
-      a.setAttribute("href", u.toString());
-    }catch(e){}
-  }
-  function onAnchor(e){
-    var t = e.target;
-    var a = (t && t.closest) ? t.closest("a[href]") : null;
-    if(a) stamp(a);
-  }
-  ["click", "auxclick", "contextmenu"].forEach(function(ev){
-    document.addEventListener(ev, onAnchor, true);
-  });
-
-  var want = mcInitLang();
-  if(want === "ar" && document.documentElement.lang !== "ar") $("langToggle").click();
-  if(want === "en" && document.documentElement.lang === "ar") $("langToggle").click();
-  mcSaveLang(want);
-})();
+if(mcInitLang() === "ar"){ $("langToggle").click(); }
 </script>
 </body>
 </html>
